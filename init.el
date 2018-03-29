@@ -30,6 +30,7 @@
 (require 'wunki-package)    ;; setup package management
 (require 'wunki-configure)  ;; required configuration
 (require 'wunki-lib)        ;; usuful methods
+(require 'wunki-editing)    ;; some defaults for editing files
 (require 'wunki-appearance) ;; theme and fonts
 (require 'wunki-git)
 

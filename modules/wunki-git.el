@@ -18,3 +18,5 @@
   :config
   (global-git-gutter-mode t)
   :diminish git-gutter-mode)
+
+(provide 'wunki-git)
