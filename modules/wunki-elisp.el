@@ -6,17 +6,13 @@
 ;; Working with parenthesis just became a lot easier
 (use-package paredit
   :commands paredit-mode
-  :config
-  (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
-  ;; Setup C-c v to eval whole buffer in all lisps.
-  (define-key lisp-mode-shared-map (kbd "C-c v") 'eval-buffer)
+  :hook (emacs-lisp-mode . enable-paredit-mode)
   :diminish paredit-mode)
 
 ;; Highlight the sexp under the cursor.
 (use-package highlight-parentheses
   :commands highlight-parentheses-mode
-  :config
-  (add-hook 'emacs-lisp-mode-hook 'highlight-parentheses-mode)
+  :hook (emacs-lisp-mode . highlight-parentheses-mode)
   :diminish highlight-parentheses-mode)
 
 ;; When saving an elisp file, remove its compiled version if
@@ -38,8 +34,7 @@
 ;; as an overlay in your elisp buffer. Try it out with C-x C-e now!
 (use-package eros
   :commands eros-mode
-  :config
-  (add-hook 'emacs-lisp-mode-hook 'eros-mode))
+  :hook (emacs-lisp-mode . eros-mode))
 
 ;; Use M-. to jump to the definition of the symbol under the cursor.
 (define-key emacs-lisp-mode-map (kbd "M-.") 'find-function-at-point)
