@@ -15,6 +15,11 @@
   "Returns true if `command' is an executable on the system search path."
   (f-executable? (s-trim (shell-command-to-string (s-concat "which " command)))))
 
+(defun wunki/is-mac ()
+  (interactive)
+  "Returns true if running on a mac"
+  (string-equal system-type "darwin"))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here
 

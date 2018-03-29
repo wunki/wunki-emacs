@@ -11,8 +11,11 @@
   (add-to-list 'default-frame-alist (cons 'font font))
   (set-face-attribute 'default nil :font font)
   (set-frame-font font nil t))
-(wunki/set-font "OperatorMonoBook-9")
 
+(if (wunki/is-mac)
+  (wunki/set-font "Operator Mono-14")
+  (wunki/set-font "OperatorMonoBook-9"))
+  
 ;; set the theme
 (use-package doom-themes
   :init
