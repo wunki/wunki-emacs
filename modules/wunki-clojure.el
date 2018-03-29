@@ -2,10 +2,12 @@
 ;;; wunki-clojure.el --- If you like your parentheses Java flavoured.
 
 (use-package clojure-mode
-  :commands clojure-mode)
+  :commands clojure-mode
+  :hook (clojure-mode-hook . yas-minor-mode))
 
 (use-package clj-refactor
   :commands clj-refactor-mode
+  :config (cljr-add-keybindings-with-prefix "C-c C-r")
   :hook (clojure-mode . clj-refactor-mode))
 
 (use-package cider

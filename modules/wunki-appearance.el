@@ -15,7 +15,7 @@
 (if (wunki/is-mac)
   (wunki/set-font "Operator Mono-14")
   (wunki/set-font "OperatorMonoBook-9"))
-  
+
 ;; set the theme
 (use-package doom-themes
   :init
@@ -25,6 +25,9 @@
   :config
   (progn
     (doom-themes-org-config)))
+
+;; Remove stuff from the modeline
+(use-package diminish)
 
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system

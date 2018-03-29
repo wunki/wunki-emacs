@@ -36,6 +36,8 @@
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-appearance)   ;; theme and fonts
 (require 'wunki-completions)
+(require 'wunki-snippets)
+(require 'wunki-projects)
 (require 'wunki-git)
 (require 'wunki-elisp)
 (require 'wunki-clojure)
