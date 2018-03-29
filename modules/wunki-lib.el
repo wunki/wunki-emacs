@@ -11,6 +11,10 @@
 (use-package s)
 (use-package dash)
 
+(defun wunki/is-exec (command)
+  "Returns true if `command' is an executable on the system search path."
+  (f-executable? (s-trim (shell-command-to-string (s-concat "which " command)))))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here
 
