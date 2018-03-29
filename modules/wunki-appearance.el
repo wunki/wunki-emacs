@@ -1,5 +1,6 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-appearance.el --- The looks of Emacs
+(require 'wunki-package)
 
 ;; Get rid of any bars
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
@@ -21,9 +22,6 @@
   :config
   (progn
     (doom-themes-org-config)))
-
-;; Don't defer screen updates when performing operations.
-(setq redisplay-dont-pause t)
 
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system
