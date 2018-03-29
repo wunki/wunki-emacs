@@ -7,7 +7,7 @@
 ;; See http://magit.github.io/ for instructions.
 (use-package magit
   :commands magit-status
-  :bind ("C-x g" . magit-status))
+  :bind ("C-c g" . magit-status))
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.

@@ -6,7 +6,7 @@
 ;; Working with parenthesis just became a lot easier
 (use-package paredit
   :commands paredit-mode
-  :hook (emacs-lisp-mode . enable-paredit-mode)
+  :hook ((emacs-lisp-mode clojure-mode cider-repl-mode) . enable-paredit-mode)
   :diminish paredit-mode)
 
 ;; Highlight the sexp under the cursor.

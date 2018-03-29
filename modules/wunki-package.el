@@ -61,4 +61,3 @@
 (setq use-package-always-ensure t)
 
 (provide 'wunki-package)
-

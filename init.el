@@ -38,3 +38,4 @@
 (require 'wunki-completions)
 (require 'wunki-git)
 (require 'wunki-elisp)
+(require 'wunki-clojure)

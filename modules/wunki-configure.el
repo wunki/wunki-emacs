@@ -14,4 +14,3 @@
 
 (provide 'wunki-configure)
 ;;; ohai-set-path.el ends here
-
