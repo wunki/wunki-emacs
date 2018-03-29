@@ -28,10 +28,10 @@
 
 ;; Load my modules
 (require 'wunki-package)      ;; setup package management
-(require 'wunki-configure)    ;; required configuration
 (require 'wunki-lib)          ;; usuful methods
 (require 'wunki-help)         ;; further improve help
 (require 'wunki-general)      ;; common settings
+(require 'wunki-shell)        ;; required configuration
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-appearance)   ;; theme and fonts

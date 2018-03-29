@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t -*-
-;;; wunki-configure.el --- Set the executable search path from the user shell.
+;;; wunki-shell.el --- Set the executable search path from the user shell.
 
 ;;; Code:
 
@@ -13,4 +13,4 @@
   (exec-path-from-shell-initialize))
 
 (provide 'wunki-configure)
-;;; ohai-set-path.el ends here
+;;; wunki-shell.el ends here
