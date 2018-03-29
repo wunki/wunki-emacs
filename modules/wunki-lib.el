@@ -16,10 +16,16 @@
   (f-executable? (s-trim (shell-command-to-string (s-concat "which " command)))))
 
 (defun wunki/is-mac ()
-  (interactive)
   "Returns true if running on a mac"
+  (interactive)
   (string-equal system-type "darwin"))
+
+(defun wunki/kill-region-or-backward-word ()
+  "Kill either the word backwards or the active region"
+  (interactive)
+  (if (region-active-p)
+      (kill-region (region-beginning) (region-end))
+    (backward-kill-word 1)))
 
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here
-
