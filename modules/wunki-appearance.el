@@ -21,7 +21,8 @@
   :commands solaire-mode
   :init (progn
           (solaire-mode))
-  :hook ((after-change-major-mode magit-mode cider-repl-mode) . turn-on-solaire-mode))
+  :hook (((after-change-major-mode magit-mode cider-repl-mode) . turn-on-solaire-mode)
+         (minibuffer-setup . solaire-mode-in-minibuffer)))
 
 ;; Use Doom themes
 (use-package doom-themes
