@@ -16,7 +16,7 @@
   (wunki/set-font "Operator Mono-14")
   (wunki/set-font "OperatorMonoBook-9"))
 
-;; set the theme
+;; Use Doom themes
 (use-package doom-themes
   :init
   (progn
@@ -27,6 +27,15 @@
 
 ;; Remove stuff from the modeline
 (use-package diminish)
+
+;; Brighten buffers which are active
+(use-package solaire-mode
+  :commands solaire-mode
+  :init (progn
+          ;; required when using doom themes
+          (solaire-mode-swap-bg)
+          (solaire-mode))
+  :hook ((after-change-major-mode magit-mode-hook) . turn-on-solaire-mode))
 
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system
