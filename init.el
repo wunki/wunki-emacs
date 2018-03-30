@@ -31,10 +31,12 @@
 (require 'wunki-lib)          ;; usuful methods
 (require 'wunki-help)         ;; further improve help
 (require 'wunki-general)      ;; common settings
+(require 'wunki-appearance)   ;; theme and fonts
 (require 'wunki-shell)        ;; required configuration
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
-(require 'wunki-appearance)   ;; theme and fonts
+(require 'wunki-lsp)          ;; language-server-protocol
+(require 'wunki-flycheck)
 (require 'wunki-completions)
 (require 'wunki-snippets)
 (require 'wunki-projects)
