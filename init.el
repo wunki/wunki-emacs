@@ -38,6 +38,7 @@
 (require 'wunki-completions)
 (require 'wunki-snippets)
 (require 'wunki-projects)
+(require 'wunki-org)
 (require 'wunki-git)
 (require 'wunki-elisp)
 (require 'wunki-clojure)

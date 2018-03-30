@@ -23,8 +23,7 @@
     (setq doom-themes-enable-italic t)
     (load-theme 'doom-city-lights t))
   :config
-  (progn
-    (doom-themes-org-config)))
+  (doom-themes-org-config))
 
 ;; Remove stuff from the modeline
 (use-package diminish)

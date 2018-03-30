@@ -12,5 +12,5 @@
 (when (memq window-system '(x mac ns))
   (exec-path-from-shell-initialize))
 
-(provide 'wunki-configure)
+(provide 'wunki-shell)
 ;;; wunki-shell.el ends here
