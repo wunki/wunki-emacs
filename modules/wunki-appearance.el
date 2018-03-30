@@ -35,7 +35,7 @@
           ;; required when using doom themes
           (solaire-mode-swap-bg)
           (solaire-mode))
-  :hook ((after-change-major-mode magit-mode-hook) . turn-on-solaire-mode))
+  :hook ((after-change-major-mode magit-mode cider-repl-mode) . turn-on-solaire-mode))
 
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system
