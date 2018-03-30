@@ -16,26 +16,27 @@
   (wunki/set-font "Operator Mono-14")
   (wunki/set-font "OperatorMonoBook-9"))
 
+;; Brighten buffers which are active
+(use-package solaire-mode
+  :commands solaire-mode
+  :init (progn
+          (solaire-mode))
+  :hook ((after-change-major-mode magit-mode cider-repl-mode) . turn-on-solaire-mode))
+
 ;; Use Doom themes
 (use-package doom-themes
   :init
   (progn
     (setq doom-themes-enable-italic t)
     (load-theme 'doom-city-lights t))
+  :hook (doom-theme-)
   :config
-  (doom-themes-org-config))
+  (progn
+    (doom-themes-org-config)
+    (solaire-mode-swap-bg)))
 
 ;; Remove stuff from the modeline
 (use-package diminish)
-
-;; Brighten buffers which are active
-(use-package solaire-mode
-  :commands solaire-mode
-  :init (progn
-          ;; required when using doom themes
-          (solaire-mode-swap-bg)
-          (solaire-mode))
-  :hook ((after-change-major-mode magit-mode cider-repl-mode) . turn-on-solaire-mode))
 
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system
