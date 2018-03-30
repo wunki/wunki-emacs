@@ -27,5 +27,16 @@
       (kill-region (region-beginning) (region-end))
     (backward-kill-word 1)))
 
+(defun wunki/mac-switch-meta nil
+  "Switch meta between Option and Command"
+  (interactive)
+  (if (eq mac-option-modifier nil)
+      (progn
+        (setq mac-option-modifier 'meta)
+        (setq mac-command-modifier 'hyper))
+    (progn
+      (setq mac-option-modifier nil)
+      (setq mac-command-modifier 'meta))))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here
