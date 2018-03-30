@@ -58,7 +58,7 @@
 
 ;; Ensure linum-mode is disabled in certain major modes.
 (setq linum-disabled-modes
-      '(term-mode slime-repl-mode magit-status-mode help-mode nrepl-mode
+      '(term-mode slime-repl-mode magit-status-mode help-mode cider-repl-mode
         mu4e-main-mode mu4e-headers-mode mu4e-view-mode
         mu4e-compose-mode))
 (defun linum-on ()
