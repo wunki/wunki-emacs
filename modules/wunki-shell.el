@@ -9,7 +9,7 @@
 
 (paradox-require 'exec-path-from-shell)
 
-(when (memq window-system '(x mac ns))
+(when (memq system-type '(gnu/linux darwin))
   (exec-path-from-shell-initialize))
 
 (provide 'wunki-shell)

@@ -3,11 +3,7 @@
 
 ;; Basic lsp-mode config.
 ;; Language modules will add their own lsp setup if this is loaded.
-(use-package lsp-mode
-  :config
-  (with-eval-after-load "flycheck"
-    (require 'lsp-flycheck)
-    (add-to-list 'flycheck-checkers 'lsp)))
+(use-package lsp-mode)
 
 (with-eval-after-load "company"
   (use-package company-lsp
