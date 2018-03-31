@@ -45,3 +45,4 @@
 (require 'wunki-elisp)
 (require 'wunki-clojure)
 (require 'wunki-rust)
+(require 'wunki-haskell)
