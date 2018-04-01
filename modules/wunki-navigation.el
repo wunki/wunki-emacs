@@ -8,8 +8,8 @@
 ;; https://github.com/abo-abo/avy
 (use-package avy
   :demand t
-  :bind (("C-;" . avy-goto-word-1)
-         ("C-:" . avy-goto-char))
+  :bind (("C-c C-w" . avy-goto-word-1)
+         ("C-c C-c" . avy-goto-char))
   :config
   (with-eval-after-load "isearch"
     (define-key isearch-mode-map (kbd "C-;") 'avy-isearch)))
