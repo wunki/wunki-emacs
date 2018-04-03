@@ -1,7 +1,9 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-rust.el --- Rust language support.
 
-(use-package rust-mode)
+(use-package rust-mode
+  :config
+  (setq rust-format-on-save t))
 
 (use-package cargo
   :hook (rust-mode . cargo-minor-mode)
