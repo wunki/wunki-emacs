@@ -13,7 +13,7 @@
   (set-frame-font font nil t))
 
 (if (wunki/is-mac)
-  (wunki/set-font "Operator Mono-14")
+  (wunki/set-font "Operator Mono-14:weight=Light")
   (wunki/set-font "OperatorMonoBook-9"))
 
 ;; Brighten buffers which are active
