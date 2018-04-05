@@ -2,12 +2,13 @@
 ;;; wunki-rust.el --- Rust language support.
 
 (use-package rust-mode
-  :config
+  :commands rust-mode
+  :init
   (setq rust-format-on-save t))
 
 (use-package cargo
   :hook (rust-mode . cargo-minor-mode)
-  :config
+  :init
   (setq compilation-ask-about-save nil)
   ;; Automatically re-run compilation command on manual save inside a project.
   ;; Will do nothing if a compilation hasn't been manually triggered

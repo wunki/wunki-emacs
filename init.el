@@ -45,5 +45,7 @@
 (require 'wunki-git)
 (require 'wunki-elisp)
 (require 'wunki-clojure)
+(require 'wunki-csharp)
 (require 'wunki-rust)
 (require 'wunki-haskell)
+(require 'wunki-elm)
