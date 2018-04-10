@@ -4,6 +4,7 @@
 (use-package mu4e
   :ensure f
   :commands mu4e
+  :bind ("C-c m" . mu4e)
   :config
   ;; generic emacs configuration for email
   (setq mail-user-agent 'mu4e-user-agent
