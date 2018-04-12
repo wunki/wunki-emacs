@@ -7,6 +7,8 @@
 ;; See http://magit.github.io/ for instructions.
 (use-package magit
   :commands magit-status
+  :config
+  (setq magit-display-buffer-function 'switch-to-buffer)
   :bind ("C-c g" . magit-status))
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
