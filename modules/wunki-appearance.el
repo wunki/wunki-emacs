@@ -53,8 +53,8 @@
 
 ;; Highlight the line number of the current line.
 (use-package hlinum
-             :config
-             (hlinum-activate))
+  :config
+  (hlinum-activate))
 
 ;; Show column numbers in modeline.
 (setq column-number-mode t)
@@ -62,8 +62,8 @@
 ;; Ensure linum-mode is disabled in certain major modes.
 (setq linum-disabled-modes
       '(term-mode slime-repl-mode magit-status-mode help-mode cider-repl-mode
-        mu4e-main-mode mu4e-headers-mode mu4e-view-mode
-        mu4e-compose-mode intero-repl-mode))
+                  mu4e-main-mode mu4e-headers-mode mu4e-view-mode
+                  mu4e-compose-mode intero-repl-mode))
 (defun linum-on ()
   (unless (or (minibufferp) (member major-mode linum-disabled-modes))
     (linum-mode 1)))
