@@ -64,4 +64,8 @@
 ;; instead of expecting you to do it manually.
 (setq use-package-always-ensure t)
 
+;; If emacs is running in daemon mode, demand all packages to be present.
+(if (daemonp)
+    (setq use-package-always-demand t))
+
 (provide 'wunki-package)
