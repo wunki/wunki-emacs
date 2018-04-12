@@ -10,8 +10,8 @@
   (if (and (functionp 'network-interface-list)
            (network-interface-list))
       (some (lambda (iface) (unless (equal "lo" (car iface))
-                         (member 'up (first (last (network-interface-info
-                                                   (car iface)))))))
+                              (member 'up (first (last (network-interface-info
+                                                        (car iface)))))))
             (network-interface-list))
     t))
 
@@ -20,8 +20,12 @@
 ;; to use MELPA as well.
 (setq package-user-dir (concat dotfiles-dir "elpa"))
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  (add-to-list 'package-archives (cons "org" (concat proto "://orgmode.org/elpa/")))
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
 
 ;; To get the package manager going, we invoke its initialise function.
 (package-initialize)
