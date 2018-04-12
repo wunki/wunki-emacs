@@ -20,6 +20,11 @@
   (interactive)
   (string-equal system-type "darwin"))
 
+(defun wunki/is-windows ()
+  "Returns true if running on windows"
+  (interactive)
+  (string-equal system-type "windows-nt"))
+
 (defun wunki/kill-region-or-backward-word ()
   "Kill either the word backwards or the active region"
   (interactive)

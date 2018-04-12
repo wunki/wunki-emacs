@@ -12,9 +12,10 @@
   (set-face-attribute 'default nil :font font)
   (set-frame-font font nil t))
 
-(if (wunki/is-mac)
-  (wunki/set-font "Operator Mono-14:weight=Light")
-  (wunki/set-font "OperatorMonoBook-9"))
+(cond
+ ((wunki/is-mac) (wunki/set-font "Operator Mono-14:weight=Light"))
+ ((wunki/is-windows) (wunki/set-font "Operator Mono Book-8"))
+ (t (wunki/set-font "OperatorMonoBook-9")))
 
 ;; Brighten buffers which are active
 (use-package solaire-mode
