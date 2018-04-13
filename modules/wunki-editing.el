@@ -20,6 +20,10 @@
   (indent-region (point-min) (point-max)))
 (global-set-key (kbd "C-c <tab>") 'indent-buffer)
 
+;; On the mac, use alt as the default meta key
+(when (wunki/is-mac)
+  (setq mac-option-modifier 'meta))
+
 ;; Automatically insert matching braces and do other clever
 ;; things pertaining to braces and such.
 (electric-pair-mode 1)
