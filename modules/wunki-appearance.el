@@ -6,16 +6,19 @@
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
 
-;; Set the font
+;; Font configuration and settings
+(defvar wunki/font-choice (cond
+                  ((wunki/is-mac) "Operator Mono-14:weight=Light")
+                  ((wunki/is-windows) "Operator Mono Book-8")
+                  (t "OperatorMonoBook-9")))
+
 (defun wunki/set-font (font)
+  "makes it a bit easier to set the font"
+  (interactive "sfont: ")
   (add-to-list 'default-frame-alist (cons 'font font))
   (set-face-attribute 'default nil :font font)
   (set-frame-font font nil t))
-
-(cond
- ((wunki/is-mac) (wunki/set-font "Operator Mono-14:weight=Light"))
- ((wunki/is-windows) (wunki/set-font "Operator Mono Book-8"))
- (t (wunki/set-font "OperatorMonoBook-9")))
+(wunki/set-font wunki/font-choice)
 
 ;; Brighten buffers which are active
 (use-package solaire-mode
@@ -31,11 +34,18 @@
   (progn
     (setq doom-themes-enable-italic t)
     (load-theme 'doom-city-lights t))
-  :hook (doom-theme-)
   :config
   (progn
     (doom-themes-org-config)
     (solaire-mode-swap-bg)))
+
+;; When using daemon mode, the theme is not set correctly
+;; these methods enable us to quickly reload the theme.
+(defun wunki/reload-theme ()
+  (interactive)
+  (load-theme 'doom-city-lights t)
+  (wunki/set-font wunki/font-choice))
+(global-set-key (kbd "C-c C-r") 'wunki/reload-theme)
 
 ;; Remove stuff from the modeline
 (use-package diminish)
