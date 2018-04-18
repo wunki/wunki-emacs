@@ -44,7 +44,8 @@
 (defun wunki/reload-theme ()
   (interactive)
   (load-theme 'doom-city-lights t)
-  (wunki/set-font wunki/font-choice))
+  (wunki/set-font wunki/font-choice)
+  (solaire-mode-swap-bg))
 (global-set-key (kbd "C-c C-r") 'wunki/reload-theme)
 
 ;; Remove stuff from the modeline
