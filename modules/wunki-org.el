@@ -3,11 +3,17 @@
 
 (require 'wunki-package)
 
+(defvar org-root (expand-file-name "~/notes"))
+
 (use-package org
   :ensure org-plus-contrib
+  :bind ("C-c c" . org-capture)
   :config
   ;; Stop org-mode from highjacking shift-cursor keys.
-  (setq org-replace-disputed-keys t))
+  (setq org-replace-disputed-keys t)
+  (setq org-capture-templates
+        `(("t" "Inbox" entry (file+headline ,(concat org-root "/inbox.org") "Tasks")
+           "* TODO %?\n  %i\n  %a"))))
 
 (use-package org-bullets
   :after (org)
@@ -20,8 +26,7 @@
 
 (use-package org-projectile
   :init (org-projectile-per-project)
-  :bind (("C-c n p" . org-projectile-project-todo-completing-read)
-         ("C-c c" . org-capture))
+  :bind ("C-c n p" . org-projectile-project-todo-completing-read)
   :config
   (progn
     (setq org-projectile-per-project-filepath "notes.org")

@@ -1,5 +1,5 @@
 ;;; -*- lexical-binding: t -*-
-;;; wunki-general.el --- Setting up the basics.
+;;; wunki-settings.el --- Setting up the basics.
 
 ;; Make sure we always use UTF-8.
 (set-terminal-coding-system 'utf-8)
@@ -43,4 +43,4 @@
 ;; at the first error.
 (setq compilation-scroll-output 'first-error)
 
-(provide 'wunki-general)
+(provide 'wunki-settings)
