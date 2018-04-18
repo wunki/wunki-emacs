@@ -7,7 +7,9 @@
 ;; See http://magit.github.io/ for instructions.
 (use-package magit
   :commands magit-status
-  :bind ("C-c g" . magit-status))
+  :bind ("C-c g" . magit-status)
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read))
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.

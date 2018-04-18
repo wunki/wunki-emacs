@@ -7,10 +7,11 @@
 (use-package projectile
   :demand t
   :commands projectile-global-mode
-  :config
-  (projectile-global-mode)
-  (setq projectile-indexing-method 'alien)
   :bind ("C-c C-f" . projectile-find-file)
+  :config
+  (setq projectile-indexing-method 'alien)
+  (setq projectile-completion-system 'ivy)
+  (projectile-global-mode +1)
   :diminish projectile-mode)
 
 ;; quickly search files in project

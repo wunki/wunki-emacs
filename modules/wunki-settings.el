@@ -14,7 +14,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Map execute command to the C-key, less hand movement with this command
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
+
 
 ;; Emacs writes backup files to `filename~` by default. This is messy,
 ;; so let's tell it to write them to `~/.emacs.d/bak` instead.
@@ -25,6 +25,9 @@
 ;; Automatically save buffers before launching M-x compile and friends,
 ;; instead of asking you if you want to save.
 (setq compilation-ask-about-save nil)
+
+;; Always follow symlinks without asking me
+(setq vc-follow-symlinks t)
 
 ;; Make the selection work like most people expect.
 (delete-selection-mode t)

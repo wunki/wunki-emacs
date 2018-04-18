@@ -4,6 +4,22 @@
 ;; Make PgUp/Dn move the point.
 (setq scroll-error-top-bottom t)
 
+;; Ivy for file management
+(use-package ivy
+  :demand
+  :bind ("C-c C-r" . ivy-resume)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (ivy-mode 1))
+
+(use-package counsel
+  :demand
+  :bind
+  (("C-x C-m" . counsel-M-x)
+   ("M-x" . counsel-M-x)
+   ("C-x C-f" . counsel-find-file)))
+
 ;; Avy is a quick way to jump around your buffers.
 ;; https://github.com/abo-abo/avy
 (use-package avy
