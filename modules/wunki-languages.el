@@ -13,4 +13,7 @@
   :mode ("\\.fish\\'" "/fish_funced\\..*\\'")
   :interpreter "fish")
 
+(use-package toml-mode
+  :mode "\\.toml\\'")
+
 (provide 'wunki-languages)
