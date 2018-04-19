@@ -7,6 +7,7 @@
 ;; Ivy for file management
 (use-package ivy
   :demand
+  :diminish
   :bind ("C-c C-r" . ivy-resume)
   :config
   (setq ivy-use-virtual-buffers t)

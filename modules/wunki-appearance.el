@@ -32,6 +32,7 @@
 (use-package doom-themes
   :init
   (progn
+    (setq doom-themes-enable-bold nil)
     (setq doom-themes-enable-italic t)
     (load-theme 'doom-city-lights t))
   :config
