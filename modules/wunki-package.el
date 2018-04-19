@@ -43,6 +43,9 @@
 (when (not (package-installed-p 'paradox))
   (package-install 'paradox))
 
+;; Quickly update and view packages with the hot keys
+(global-set-key (kbd "C-c C-p") 'package-list-packages)
+
 ;; We're going to be using `use-package' to manage our dependencies.
 ;; In its simplest form, we can call eg. `(use-package lolcode-mode)'
 ;; to install the `lolcode-mode' package. We'd also declare one or more
