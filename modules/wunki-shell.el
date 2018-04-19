@@ -9,6 +9,12 @@
 
 (paradox-require 'exec-path-from-shell)
 
+;; This package makes SSH auth work for us, not requiring
+;; a password each time.
+(use-package keychain-environment
+  :demand
+  :config (keychain-refresh-environment))
+
 (when (memq system-type '(gnu/linux darwin))
   (exec-path-from-shell-initialize))
 
