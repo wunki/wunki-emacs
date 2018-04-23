@@ -13,9 +13,6 @@
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Map execute command to the C-key, less hand movement with this command
-
-
 ;; Emacs writes backup files to `filename~` by default. This is messy,
 ;; so let's tell it to write them to `~/.emacs.d/bak` instead.
 ;; If you have an accident, check this directory - you might get lucky.
