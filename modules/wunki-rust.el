@@ -14,8 +14,8 @@
   ;; Will do nothing if a compilation hasn't been manually triggered
   ;; in the past.
   (with-eval-after-load "projectile"
-    (bind-key "C-c C-r" #'wunki/save-and-recompile)
-    (bind-key "C-c r" #'wunki/save-all-and-recompile))
+    (bind-key "C-c p c" #'wunki/save-and-recompile)
+    (bind-key "C-c p C" #'wunki/save-all-and-recompile))
   :diminish cargo-minor-mode)
 
 ;; If the LSP module is enabled, set up RLS support.
