@@ -51,3 +51,4 @@
 (require 'wunki-rust)
 (require 'wunki-haskell)
 (require 'wunki-elm)
+(require 'wunki-twitter)
