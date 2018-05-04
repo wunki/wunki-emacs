@@ -34,6 +34,7 @@
 (require 'wunki-navigation)   ;; moving around
 (require 'wunki-appearance)   ;; theme and fonts
 (require 'wunki-shell)        ;; required configuration
+(require 'wunki-eshell)       ;; eshell
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-languages)    ;; language modes which are generic
