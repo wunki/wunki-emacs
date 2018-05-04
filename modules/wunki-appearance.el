@@ -37,6 +37,7 @@
     (load-theme 'doom-city-lights t))
   :config
   (progn
+    (set-face-italic 'font-lock-comment-face t)
     (doom-themes-org-config)
     (solaire-mode-swap-bg)))
 
@@ -45,6 +46,7 @@
 (defun wunki/reload-theme ()
   (interactive)
   (load-theme 'doom-city-lights t)
+  (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (solaire-mode-swap-bg))
 (global-set-key (kbd "C-c C-r") 'wunki/reload-theme)
