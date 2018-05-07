@@ -34,7 +34,7 @@
   (progn
     (setq doom-themes-enable-bold nil)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-city-lights t))
+    (load-theme 'doom-challenger-deep t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -45,7 +45,7 @@
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'doom-city-lights t)
+  (load-theme 'doom-challenger-deep t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (solaire-mode-swap-bg))
