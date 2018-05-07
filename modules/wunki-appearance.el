@@ -39,6 +39,7 @@
   (progn
     (set-face-italic 'font-lock-comment-face t)
     (doom-themes-org-config)
+    (doom-themes-neotree-config)
     (solaire-mode-swap-bg)))
 
 ;; When using daemon mode, the theme is not set correctly
@@ -48,6 +49,7 @@
   (load-theme 'doom-challenger-deep t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
+  (doom-themes-neotree-config)
   (solaire-mode-swap-bg))
 (global-set-key (kbd "C-c C-r") 'wunki/reload-theme)
 
@@ -69,6 +71,9 @@
 (use-package hlinum
   :config
   (hlinum-activate))
+
+(use-package neotree
+  :bind ("<f8>" . neotree-toggle))
 
 ;; Show column numbers in modeline.
 (setq column-number-mode t)
