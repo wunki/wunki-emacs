@@ -73,7 +73,9 @@
   (hlinum-activate))
 
 (use-package neotree
-  :bind ("<f8>" . neotree-toggle))
+  :config
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  :bind ("C-c t" . neotree-toggle))
 
 ;; Show column numbers in modeline.
 (setq column-number-mode t)
