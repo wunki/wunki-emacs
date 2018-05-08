@@ -75,6 +75,12 @@
 (use-package neotree
   :config
   (setq projectile-switch-project-action 'neotree-projectile-action)
+  (setq neo-window-fixed-size nil)
+  (add-to-list 'window-size-change-functions
+                  (lambda (frame)
+                    (let ((neo-window (neo-global--get-window)))
+                      (unless (null neo-window)
+                        (setq neo-window-width (window-width neo-window))))))
   :bind ("C-c t" . neotree-toggle))
 
 ;; Show column numbers in modeline.
