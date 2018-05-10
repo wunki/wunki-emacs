@@ -22,6 +22,7 @@
 ;; which feels more natural for a shell.
 (add-hook 'eshell-mode-hook
           (lambda ()
+            (linum-mode -1)
             (company-mode 0)))
 
 ;; When completing with multiple options, complete only as much as
