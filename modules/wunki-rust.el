@@ -18,12 +18,10 @@
     (bind-key "C-c p C" #'wunki/save-all-and-recompile))
   :diminish cargo-minor-mode)
 
-;; If the LSP module is enabled, set up RLS support.
-(with-eval-after-load "wunki-lsp"
-  (require 'wunki-flycheck)
-  (use-package lsp-rust
-    :hook ((rust-mode . lsp-rust-enable)
-           (rust-mode . flycheck-mode))))
+;; lsp interaction
+(use-package eglot
+  :commands eglot
+  :hook ((rust-mode . eglot)))
 
 (defun wunki/save-and-recompile ()
   (interactive)

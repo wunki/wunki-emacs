@@ -11,7 +11,7 @@
 (use-package flycheck
   :config
   :hook (find-file . (lambda ()
-                       (when (not (equal 'emacs-lisp-mode major-mode))
+                       (when (not (member major-mode '(emacs-lisp-mode rust-mode)))
                          (flycheck-mode)))))
 
 ;; Turn the modeline red when Flycheck has errors.
