@@ -56,6 +56,20 @@
 ;; Remove stuff from the modeline
 (use-package diminish)
 
+;; a pretty modeline
+(use-package minions
+  :init (minions-mode)
+  :config
+  (setq
+   minions-mode-line-lighter "#"
+   minions-direct '(flycheck-mode
+                    cider-mode)))
+
+(use-package moody
+  :config
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode))
+
 ;; When not in a terminal, configure a few window system specific things.
 (when window-system
   (setq frame-title-format '(buffer-file-name "%f" ("%b")))
