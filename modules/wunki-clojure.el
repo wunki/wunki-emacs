@@ -3,7 +3,8 @@
 
 (use-package clojure-mode
   :commands clojure-mode
-  :hook (clojure-mode-hook . yas-minor-mode))
+  :hook ((clojure-mode . yas-minor-mode)
+         (clojure-mode . eldoc-mode)))
 
 (use-package clj-refactor
   :commands clj-refactor-mode
