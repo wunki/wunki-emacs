@@ -21,7 +21,7 @@
 ;; lsp interaction
 (use-package eglot
   :commands eglot
-  :hook (rust-mode . eglot))
+  :hook (rust-mode . eglot-ensure))
 
 (defun wunki/save-and-recompile ()
   (interactive)
