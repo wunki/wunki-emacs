@@ -55,5 +55,9 @@
     (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 (global-set-key (kbd "C-c s") 'wunki/sudo-edit)
 
+(defun wunki/counsel-find-notes nil
+  (interactive)
+  (counsel-find-file "~/notes/"))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here

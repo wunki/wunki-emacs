@@ -19,7 +19,8 @@
   :bind
   (("C-x C-m" . counsel-M-x)
    ("M-x" . counsel-M-x)
-   ("C-x C-f" . counsel-find-file)))
+   ("C-x C-f" . counsel-find-file)
+   ("C-x t" . wunki/counsel-find-notes)))
 
 ;; Avy is a quick way to jump around your buffers.
 ;; https://github.com/abo-abo/avy
