@@ -10,10 +10,12 @@
   :bind ("C-c c" . org-capture)
   :config
   ;; Stop org-mode from highjacking shift-cursor keys.
-  (setq org-replace-disputed-keys t)
-  (setq org-capture-templates
+  (setq org-replace-disputed-keys t
+        org-startup-indented t
+        org-capture-templates
         `(("t" "Inbox" entry (file+headline ,(concat org-root "/inbox.org") "Tasks")
-           "* TODO %?\n  %i\n  %a"))))
+           "* TODO %?\n  %i\n  %a")))
+  :hook (org-mode . visual-line-mode))
 
 (use-package org-bullets
   :after (org)
@@ -29,7 +31,7 @@
   :bind ("C-c n p" . org-projectile-project-todo-completing-read)
   :config
   (progn
-    (setq org-projectile-per-project-filepath "notes.org")
+    (setq org-projectile-per-project-filepath (concat org-root "/projects.org"))
     (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
     (push (org-projectile-project-todo-entry) org-capture-templates)))
 

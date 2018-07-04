@@ -7,6 +7,16 @@
   :commands er/expand-region
   :bind ("C-c e" . er/expand-region))
 
+;; In this day and age, we need emoji's
+(use-package emojify
+  :commands emojify-mode
+  :hook
+  ((markdown-mode . emojify-mode)
+   (twittering-edit-mode . emojify-mode)
+   (git-commit-mode . emojify-mode)
+   (magit-status-mode . emojify-mode)
+   (magit-log-mode . emojify-mode)))
+
 ;; Update the buffer when a file changes on disk
 (global-auto-revert-mode 1)
 
