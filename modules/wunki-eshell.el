@@ -16,7 +16,7 @@
 ;; Define a pretty prompt.
 (use-package eshell-git-prompt
   :config
-  (eshell-git-prompt-use-theme 'powerline))
+  (eshell-git-prompt-use-theme 'simple))
 
 ;; Disable company-mode for eshell, falling back to pcomplete,
 ;; which feels more natural for a shell.
@@ -28,6 +28,8 @@
 ;; When completing with multiple options, complete only as much as
 ;; possible and wait for further input.
 (setq eshell-cmpl-cycle-completions nil)
+
+(setq eshell-banner-message "\n\n")
 
 ;; esh-autosuggest provides fish shell like autosuggestion from history.
 (use-package esh-autosuggest
