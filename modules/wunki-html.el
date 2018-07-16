@@ -11,4 +11,6 @@
   (setq web-mode-enable-auto-pairing t)
   (setq web-mode-enable-auto-expanding t)
   (setq web-mode-enable-css-colorization t))
+
+(provide 'wunki-html)
 ;;; wunki-html.el ends here
