@@ -8,9 +8,9 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                  ((wunki/is-mac) "Operator Mono-14:weight=Light")
-                  ((wunki/is-windows) "Operator Mono Book-9")
-                  (t "OperatorMonoBook-9")))
+                           ((wunki/is-mac) "Operator Mono-14:weight=Light")
+                           ((wunki/is-windows) "Operator Mono Book-9")
+                           (t "OperatorMonoBook-9")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"
@@ -91,10 +91,10 @@
   (setq projectile-switch-project-action 'neotree-projectile-action)
   (setq neo-window-fixed-size nil)
   (add-to-list 'window-size-change-functions
-                  (lambda (frame)
-                    (let ((neo-window (neo-global--get-window)))
-                      (unless (null neo-window)
-                        (setq neo-window-width (window-width neo-window))))))
+               (lambda (frame)
+                 (let ((neo-window (neo-global--get-window)))
+                   (unless (null neo-window)
+                     (setq neo-window-width (window-width neo-window))))))
   :bind ("C-c t" . neotree-toggle))
 
 ;; Show column numbers in modeline.

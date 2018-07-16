@@ -38,3 +38,4 @@
       (projectile-run-compilation cmd))))
 
 (provide 'wunki-rust)
+;;; wunki-rust.el ends here

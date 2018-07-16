@@ -51,6 +51,7 @@
 (require 'wunki-clojure)
 (require 'wunki-csharp)
 (require 'wunki-rust)
+(require 'wunki-html)
 ;(require 'wunki-haskell)
 ;(require 'wunki-elm)
 ;(require 'wunki-pony)
