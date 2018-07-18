@@ -46,6 +46,7 @@
 (require 'wunki-org)
 (require 'wunki-mu)
 (require 'wunki-git)
+(require 'wunki-c)
 (require 'wunki-elisp)
 (require 'wunki-clojure)
 (require 'wunki-csharp)
