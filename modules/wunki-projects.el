@@ -7,7 +7,8 @@
 (use-package projectile
   :demand t
   :commands projectile-global-mode
-  :bind ("C-c C-f" . projectile-find-file)
+  :bind (("C-c C-f" . projectile-find-file)
+         ("C-c p" . 'projectile-command-map))
   :config
   (setq projectile-indexing-method 'alien)
   (setq projectile-completion-system 'ivy)
