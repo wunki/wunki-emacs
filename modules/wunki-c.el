@@ -5,7 +5,7 @@
   :commands (lsp-cquery-enable)
   :hook (c-mode-common . lsp-cquery-enable)
   :config
-  (setq cquery-executable "/usr/sbin/cquery")
+  (setq cquery-executable (if (wunki/is-mac) "/usr/local/bin/cquery" "/usr/sbin/cquery"))
   (setq cquery-extra-init-params '(:completion (:detailedLabel t))))
 
 (provide 'wunki-c)
