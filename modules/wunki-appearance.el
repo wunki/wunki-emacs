@@ -20,6 +20,11 @@
   (set-frame-font font nil t))
 (wunki/set-font wunki/font-choice)
 
+(use-package default-text-scale
+  :commands default-text-scale-mode
+  :config
+  (default-text-scale-mode))
+
 ;; Brighten buffers which are active
 (use-package solaire-mode
   :commands solaire-mode
