@@ -3,8 +3,7 @@
 
 (use-package clojure-mode
   :commands clojure-mode
-  :hook ((clojure-mode . yas-minor-mode)
-         (clojure-mode . eldoc-mode)))
+  :hook (clojure-mode . yas-minor-mode))
 
 (use-package clj-refactor
   :commands clj-refactor-mode
@@ -14,7 +13,9 @@
 (use-package cider
   :commands cider-mode
   :config
-  (setq cider-repl-display-help-banner 'nil))
+  (setq cider-repl-display-help-banner 'nil)
+  :hook ((cider-mode . eldoc-mode)
+         (cider-repl-mode . eldoc-mode)))
 
 (provide 'wunki-clojure)
 ;;; wunki-clojure.el ends here
