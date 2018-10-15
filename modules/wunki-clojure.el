@@ -8,7 +8,9 @@
 (use-package clj-refactor
   :commands clj-refactor-mode
   :config (cljr-add-keybindings-with-prefix "C-c C-r")
-  :hook (clojure-mode . clj-refactor-mode))
+  :hook ((clojure-mode . clj-refactor-mode)
+         (clojure-mode . paredit-mode))
+  )
 
 (use-package cider
   :commands cider-mode

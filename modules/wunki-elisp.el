@@ -3,20 +3,6 @@
 
 (require 'wunki-package)
 
-;; Working with parenthesis made easier
-(use-package smartparens
-  :config
-  (progn
-    (require 'smartparens-config)
-    (setq sp-base-key-bindings 'paredit
-          sp-autoskip-closing-pair 'always
-          sp-hybrid-kill-entire-symbol nil)
-    (sp-use-paredit-bindings))
-  :hook ((racket-mode . smartparens-strict-mode)
-         (clojure-mode . smartparens-strict-mode)
-         (emacs-lisp-mode . smartparens-strict-mode))
-  :diminish smartparens-mode)
-
 ;; Highlight the sexp under the cursor.
 (use-package highlight-parentheses
   :commands highlight-parentheses-mode
