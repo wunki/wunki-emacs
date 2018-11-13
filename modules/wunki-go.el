@@ -6,13 +6,19 @@
 (use-package go-mode
   :commands go-mode
   :config
-  ;; use goimports for formatting and fixing imports
-  (setq gofmt-command "goimports")
+  (progn
+    ;; use goimports for formatting and fixing imports
+    (setq gofmt-command "goimports")
+    (bind-key [remap find-tag] #'godef-jump)
+    (exec-path-from-shell-copy-env "GOPATH"))
   :hook ((before-save . gofmt-before-save)
          (go-mode . company-mode)))
 
 (use-package company-go
-  :after go-mode)
+  :after go-mode
+  :config
+  (with-eval-after-load 'company
+    (add-to-list 'company-backends 'company-go)))
 
 (use-package go-eldoc
   :commands go-eldoc-setup
