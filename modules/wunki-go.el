@@ -11,6 +11,7 @@
     (setq gofmt-command "goimports")
     (bind-key [remap find-tag] #'godef-jump)
     (exec-path-from-shell-copy-env "GOPATH"))
+  :bind (:map go-mode-map ("M-." . godef-jump))
   :hook ((before-save . gofmt-before-save)
          (go-mode . company-mode)))
 
