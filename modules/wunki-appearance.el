@@ -117,5 +117,8 @@
 ;; Highlight matching braces.
 (show-paren-mode 1)
 
+;; highlight the current line
+(global-hl-line-mode 1)
+
 (provide 'wunki-appearance)
 ;;; wunki-appearance.el ends here
