@@ -10,6 +10,9 @@
 ;; don't show splash screen
 (setq inhibit-splash-screen t)
 
+;; don't show anything as the scratch message
+(setq initial-scratch-message "")
+
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
