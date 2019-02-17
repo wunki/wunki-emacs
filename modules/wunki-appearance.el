@@ -10,7 +10,7 @@
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "Operator Mono-14:weight=Light")
                            ((wunki/is-windows) "Operator Mono Book-9")
-                           (t "OperatorMonoBook-9")))
+                           (t "OperatorMonoSsmBook-8")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"
