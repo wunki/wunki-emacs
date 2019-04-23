@@ -13,6 +13,9 @@
 ;; don't show anything as the scratch message
 (setq initial-scratch-message "")
 
+;; don't ring any bells
+(setq ring-bell-function 'ignore)
+
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
