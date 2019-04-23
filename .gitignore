@@ -23,3 +23,4 @@ projectile.cache
 /abbrev_defs
 server/
 /bookmarks
+/transient/history.el

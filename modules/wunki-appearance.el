@@ -39,7 +39,7 @@
   (progn
     (setq doom-themes-enable-bold nil)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-city-lights t))
+    (load-theme 'doom-challenger-deep t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -51,7 +51,7 @@
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'doom-city-lights t)
+  (load-theme 'doom-challenger-deep t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
@@ -83,8 +83,8 @@
   (blink-cursor-mode -1))
 
 ;; Show line numbers in buffers.
-(global-linum-mode t)
-(setq linum-format (if (not window-system) "%4d " "%4d"))
+(global-linum-mode nil)
+(setq linum-format (if (not window-system) "%4d " "%4d "))
 
 ;; Highlight the line number of the current line.
 (use-package hlinum
