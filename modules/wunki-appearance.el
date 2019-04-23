@@ -58,6 +58,10 @@
   (solaire-mode-swap-bg))
 (global-set-key (kbd "C-c C-r") 'wunki/reload-theme)
 
+(use-package doom-modeline
+  :ensure t
+  :hook (after-init . doom-modeline-mode))
+
 ;; Remove stuff from the modeline
 (use-package diminish)
 
