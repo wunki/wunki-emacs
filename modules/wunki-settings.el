@@ -46,4 +46,7 @@
 ;; at the first error.
 (setq compilation-scroll-output 'first-error)
 
+;; use mac key as meta
+(setq mac-command-modifier 'meta)
+
 (provide 'wunki-settings)
