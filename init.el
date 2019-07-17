@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t -*-
 ;;; init.el --- This is where all emacs start.
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 ;; Initialiaze the package system
 (package-initialize)
 
