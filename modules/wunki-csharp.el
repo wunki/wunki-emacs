@@ -11,10 +11,9 @@
 (use-package omnisharp
   :commands omnisharp-mode
   :init
-  (setq omnisharp-server-executable-path
-        (if (wunki/is-mac)
-          "/Users/home/wunki/Code/omnisharp-roslyn/bin/OmniSharp.exe"
-          "/home/wunki/etc/omnisharp/OmniSharp.exe"))
+  (setq omnisharp-server-executable-path (if (wunki/is-mac)
+                                             "/Users/wunki/Downloads/omnisharp-osx/run"
+                                             "/opt/omnisharp-roslyn/OmniSharp.exe"))
   :hook (csharp-mode . omnisharp-mode))
 
 (provide 'wunki-csharp)
