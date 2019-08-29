@@ -55,8 +55,5 @@
 (require 'wunki-rust)
 (require 'wunki-go)
 (require 'wunki-html)
-;(require 'wunki-haskell)
-;(require 'wunki-elm)
-;(require 'wunki-pony)
 (require 'wunki-twitter)
 (require 'wunki-erc)
