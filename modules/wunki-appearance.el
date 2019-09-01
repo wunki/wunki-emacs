@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Operator Mono SSm-14:weight=Light")
+                           ((wunki/is-mac) "Space Mono-14")
                            ((wunki/is-windows) "Operator Mono Book-9")
                            (t "OperatorMonoSsmBook-8")))
 
@@ -45,7 +45,7 @@
     (set-face-italic 'font-lock-comment-face t)
     (doom-themes-org-config)
     (doom-themes-neotree-config)
-    (solaire-mode-swap-bg)))
+    ))
 
 ;; When using daemon mode, the theme is not set correctly
 ;; these methods enable us to quickly reload the theme.
