@@ -25,6 +25,7 @@
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
   (add-to-list 'package-archives (cons "org" (concat proto "://orgmode.org/elpa/")))
+  (add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")))
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t))
 
 ;; To get the package manager going, we invoke its initialise function.
