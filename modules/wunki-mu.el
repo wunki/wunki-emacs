@@ -26,13 +26,13 @@
              :leave-func (lambda () (mu4e-message "Leaving personal context"))
              :match-func (lambda (msg)
                            (when msg
-                             (string-match-p "^/wunki" (mu4e-message-field msg :maildir))))
+                             (string-match-p "^/petar" (mu4e-message-field msg :maildir))))
              :vars '((user-mail-address      . "petar@wunki.org")
                      (user-full-name         . "Petar Radosevic")
-                     (mu4e-sent-folder       .  "/wunki/sent")
-                     (mu4e-trash-folder      .  "/wunki/trash")
-                     (mu4e-refile-folder     .  "/wunki/archive")
-                     (mu4e-drafts-folder     .  "/wunki/drafts")
+                     (mu4e-sent-folder       .  "/petar/sent")
+                     (mu4e-trash-folder      .  "/petar/trash")
+                     (mu4e-refile-folder     .  "/petar/archive")
+                     (mu4e-drafts-folder     .  "/petar/drafts")
                      (mu4e-sent-messages-behavior . sent)
                      (mu4e-compose-signature . (concat
                                                 "Petar Radosevic\n"
