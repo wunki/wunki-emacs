@@ -15,7 +15,7 @@
 
 ;; Strict whitespace with ethan-wspace: highlight bad habits,
 ;; and automatically clean up your code when saving.
-;; Use C-c c to instantly clean up your file.
+;; Use C-c w to instantly clean up your file.
 ;; Read more about ethan-wspace: https://github.com/glasserc/ethan-wspace
 (use-package ethan-wspace
   :demand t

@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Triplicate T3-15")
+                           ((wunki/is-mac) "Dank Mono-15")
                            ((wunki/is-windows) "Operator Mono Book-9")
                            (t "OperatorMonoSsmBook-8")))
 
@@ -39,7 +39,8 @@
   (progn
     (setq doom-themes-enable-bold nil)
     (setq doom-themes-enable-italic t)
-    (load-theme 'almost-mono-white t))
+    (load-theme 'doom-challenger-deep t)
+    )
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -47,14 +48,11 @@
     (doom-themes-neotree-config)
     ))
 
-;; Monochromatic themes
-(use-package almost-mono-themes)
-
 ;; When using daemon mode, the theme is not set correctly
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'almost-mono-white t)
+  (load-theme 'doom-challenger-deep t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
@@ -93,6 +91,9 @@
 (global-linum-mode 0)
 (setq linum-format (if (not window-system) "%4d " "%4d "))
 
+;; highlight the current line
+(global-hl-line-mode +1)
+
 ;; Highlight the line number of the current line.
 (use-package hlinum
   :config
@@ -122,7 +123,7 @@
     (linum-mode 1)))
 
 ;; Highlight matching braces.
-(show-paren-mode 1)
+(global-highlight-parentheses-mode +1)
 
 (provide 'wunki-appearance)
 ;;; wunki-appearance.el ends here

@@ -50,6 +50,7 @@
 (require 'wunki-git)
 (require 'wunki-c)
 (require 'wunki-elisp)
+(require 'wunki-elixir)
 (require 'wunki-clojure)
 (require 'wunki-csharp)
 (require 'wunki-rust)

@@ -3,7 +3,9 @@
 
 ;; Basic lsp-mode config.
 ;; Language modules will add their own lsp setup if this is loaded.
-(use-package lsp-mode)
+(use-package lsp-mode
+  :commands lsp
+  :diminish lsp-mode)
 
 (with-eval-after-load "company"
   (use-package company-lsp
