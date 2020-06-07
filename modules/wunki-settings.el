@@ -39,6 +39,10 @@
 ;; Automatically update unmodified buffers whose files have changed.
 (global-auto-revert-mode 1)
 
+;; If available, enable font ligatures (only available on emacs-mac build)
+(when (fboundp 'mac-auto-operator-composition-mode)
+  (mac-auto-operator-composition-mode t))
+
 ;; If available, use `xdg-open' to open URLs.
 (when (wunki/is-exec "xdg-open")
   (setq-default
