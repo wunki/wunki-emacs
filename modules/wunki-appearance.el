@@ -122,8 +122,5 @@
   (unless (or (minibufferp) (member major-mode linum-disabled-modes))
     (linum-mode 1)))
 
-;; Highlight matching braces.
-(global-highlight-parentheses-mode +1)
-
 (provide 'wunki-appearance)
 ;;; wunki-appearance.el ends here
