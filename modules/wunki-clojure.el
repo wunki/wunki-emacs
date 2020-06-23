@@ -3,20 +3,47 @@
 
 (use-package clojure-mode
   :commands clojure-mode
-  :hook (clojure-mode . yas-minor-mode))
+  :defer t
+  :mode (("\\.clj\\'" . clojure-mode)
+         ("\\.edn\\'" . clojure-mode))
+  :hook
+  (clojure-mode . yas-minor-mode)
+  (clojure-mode . subword-mode)
+  (clojure-mode . eldoc-mode))
+
+(use-package parinfer
+  :ensure t
+  :bind
+  (("C-," . parinfer-toggle-mode))
+  :init
+  (progn
+    (setq parinfer-extensions
+          '(defaults
+            pretty-parens
+            paredit
+            smart-tab
+            smart-yank))
+    (add-hook 'clojure-mode-hook #'parinfer-mode)
+    (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
+    (add-hook 'common-lisp-mode-hook #'parinfer-mode)
+    (add-hook 'scheme-mode-hook #'parinfer-mode)
+    (add-hook 'lisp-mode-hook #'parinfer-mode)))
 
 (use-package clj-refactor
   :commands clj-refactor-mode
+  :defer t
   :config (cljr-add-keybindings-with-prefix "C-c C-r")
   :hook ((clojure-mode . clj-refactor-mode)
-         (clojure-mode . paredit-mode)
          (clojure-mode . paren-face-mode)))
 
 (use-package cider
   :commands cider-mode
+  :defer t
   :config
   (setq cider-repl-display-help-banner 'nil
-        cider-prompt-for-symbol 'nil)
+        cider-prompt-for-symbol 'nil
+        cider-font-lock-dynamically t
+        nrepl-hide-special-buffers t)
   :hook ((cider-mode . eldoc-mode)
          (cider-repl-mode . eldoc-mode)))
 
