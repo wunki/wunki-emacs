@@ -7,7 +7,14 @@
 (use-package flx
   :demand)
 
-;; Ivy for file management
+(use-package counsel
+  :demand
+  :bind
+  (("C-x C-m" . counsel-M-x)
+   ("M-x" . counsel-M-x)
+   ("C-x C-f" . counsel-find-file)
+   ("C-x t" . wunki/counsel-find-notes)))
+
 (use-package ivy
   :demand
   :diminish
@@ -18,14 +25,6 @@
   (setq ivy-initial-inputs-alist nil)
   (setq enable-recursive-minibuffers t)
   (ivy-mode 1))
-
-(use-package counsel
-  :demand
-  :bind
-  (("C-x C-m" . counsel-M-x)
-   ("M-x" . counsel-M-x)
-   ("C-x C-f" . counsel-find-file)
-   ("C-x t" . wunki/counsel-find-notes)))
 
 ;; Avy is a quick way to jump around your buffers.
 ;; https://github.com/abo-abo/avy
