@@ -27,7 +27,6 @@
   (ivy-mode 1))
 
 ;; Avy is a quick way to jump around your buffers.
-;; https://github.com/abo-abo/avy
 (use-package avy
   :demand t
   :bind (("C-c C-w" . avy-goto-word-1)

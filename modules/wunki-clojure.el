@@ -1,6 +1,13 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-clojure.el --- If you like your parentheses Java flavoured.
 
+(defun add-clj-format-before-save ()
+  (interactive)
+  (add-hook 'before-save-hook
+            'cider-format-buffer
+            t
+      t))
+
 (use-package clojure-mode
   :commands clojure-mode
   :defer t
@@ -9,7 +16,8 @@
   :hook
   (clojure-mode . yas-minor-mode)
   (clojure-mode . subword-mode)
-  (clojure-mode . eldoc-mode))
+  (clojure-mode . eldoc-mode)
+  (clojure-mode . add-clj-format-before-save))
 
 (use-package parinfer
   :ensure t
