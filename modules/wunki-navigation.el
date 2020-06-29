@@ -4,6 +4,9 @@
 ;; Make PgUp/Dn move the point.
 (setq scroll-error-top-bottom t)
 
+(use-package flx
+  :demand)
+
 ;; Ivy for file management
 (use-package ivy
   :demand
