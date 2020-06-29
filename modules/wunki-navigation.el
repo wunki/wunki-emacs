@@ -11,6 +11,8 @@
   :bind ("C-c C-r" . ivy-resume)
   :config
   (setq ivy-use-virtual-buffers t)
+  (setq ivy-re-builders-alist '((t . ivy--regex-fuzzy)))
+  (setq ivy-initial-inputs-alist nil)
   (setq enable-recursive-minibuffers t)
   (ivy-mode 1))
 
