@@ -3,9 +3,6 @@
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-;; Initialiaze the package system
-(package-initialize)
-
 ;; Skip the default splash screen.
 ;; (setq inhibit-startup-message t)
 
