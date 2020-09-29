@@ -5,13 +5,13 @@
 
 ;; `(online?)` is a function that tries to detect whether you are online.
 ;; We want to refresh our package list on Emacs start if we are.
-(require 'cl)
+(require 'cl-lib)
 (defun online? ()
   (if (and (functionp 'network-interface-list)
            (network-interface-list))
-      (some (lambda (iface) (unless (equal "lo" (car iface))
-                              (member 'up (first (last (network-interface-info
-                                                        (car iface)))))))
+      (cl-some (lambda (iface) (unless (equal "lo" (car iface)))
+                              (member 'up (cl-first (last (network-interface-info
+                                                        (car iface))))))
             (network-interface-list))
     t))
 
