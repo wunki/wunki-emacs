@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Triplicate T4-14")
+                           ((wunki/is-mac) "MonoLisa-13")
                            ((wunki/is-windows) "Operator Mono Book-9")
                            (t "OperatorMonoSsmBook-8")))
 
@@ -39,7 +39,7 @@
   (progn
     (setq doom-themes-enable-bold nil)
     (setq doom-themes-enable-italic t)
-    (load-theme 'eink t)
+    (load-theme 'doom-flatwhite t)
     )
   :config
   (progn
@@ -52,7 +52,7 @@
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'eink t)
+  (load-theme 'doom-flatwhite t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)

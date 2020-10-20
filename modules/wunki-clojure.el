@@ -35,7 +35,9 @@
     (add-hook 'emacs-lisp-mode-hook #'parinfer-mode)
     (add-hook 'common-lisp-mode-hook #'parinfer-mode)
     (add-hook 'scheme-mode-hook #'parinfer-mode)
-    (add-hook 'lisp-mode-hook #'parinfer-mode)))
+    (add-hook 'lisp-mode-hook #'parinfer-mode))
+  :config
+    (electric-pair-local-mode -1))
 
 (use-package clj-refactor
   :commands clj-refactor-mode
