@@ -52,6 +52,7 @@
 (require 'wunki-csharp)
 (require 'wunki-rust)
 (require 'wunki-go)
+(require 'wunki-zig)
 (require 'wunki-html)
 (require 'wunki-twitter)
 (require 'wunki-erc)
