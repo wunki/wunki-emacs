@@ -29,13 +29,13 @@
   :config
   (progn
     (flycheck-gometalinter-setup))
-    ;; skip linting for vendor dirs
-    (setq flycheck-gometalinter-vendor t)
-    ;; use in test files
-    (setq flycheck-gometalinter-test t)
-    ;; only use fast linters
-    (setq flycheck-gometalinter-fast t)
-    ;; explicitly disable 'gotype' linter
-    (setq flycheck-gometalinter-disable-linters '("gotype")))
+  ;; skip linting for vendor dirs
+  (setq flycheck-gometalinter-vendor t)
+  ;; use in test files
+  (setq flycheck-gometalinter-test t)
+  ;; only use fast linters
+  (setq flycheck-gometalinter-fast t)
+  ;; explicitly disable 'gotype' linter
+  (setq flycheck-gometalinter-disable-linters '("gotype")))
 
 ;;; wunki-go.el ends here
