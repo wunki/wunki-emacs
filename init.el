@@ -3,8 +3,8 @@
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-;; Skip the default splash screen.
-;; (setq inhibit-startup-message t)
+;;; Enable native compilation
+(setq comp-speed 2)
 
 ;; Figure out the current hostname.
 (setq hostname (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" (with-output-to-string (call-process "hostname" nil standard-output))))
