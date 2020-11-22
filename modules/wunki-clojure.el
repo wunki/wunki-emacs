@@ -16,6 +16,7 @@
   :hook
   (clojure-mode . yas-minor-mode)
   (clojure-mode . subword-mode)
+  (clojure-mode . show-paren-mode)
   (clojure-mode . eldoc-mode)
   (clojure-mode . add-clj-format-before-save))
 
