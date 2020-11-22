@@ -33,7 +33,7 @@
 (require 'wunki-navigation)   ;; moving around
 (require 'wunki-appearance)   ;; theme and fonts
 (require 'wunki-shell)        ;; required configuration
-(require 'wunki-eshell)       ;; eshell
+(require 'wunki-term)         ;; vterm configuration
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-languages)    ;; language modes which are generic
@@ -49,7 +49,6 @@
 (require 'wunki-elisp)
 (require 'wunki-elixir)
 (require 'wunki-clojure)
-(require 'wunki-csharp)
 (require 'wunki-rust)
 (require 'wunki-go)
 (require 'wunki-zig)
