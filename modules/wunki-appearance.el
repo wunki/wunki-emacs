@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "MonoLisa-14")
+                           ((wunki/is-mac) "MonoLisa-13")
                            ((wunki/is-windows) "Operator Mono Book-9")
                            (t "OperatorMonoSsmBook-8")))
 
@@ -90,9 +90,6 @@
 ;; Show line numbers in buffers.
 (global-linum-mode 0)
 (setq linum-format (if (not window-system) "%4d " "%4d "))
-
-;; highlight the current line
-(global-hl-line-mode +1)
 
 ;; Highlight the line number of the current line.
 (use-package hlinum
