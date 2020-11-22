@@ -6,13 +6,17 @@
   (add-hook 'before-save-hook
             'cider-format-buffer
             t
-      t))
+            t))
+
+(use-package flycheck-clj-kondo
+  :ensure t)
 
 (use-package clojure-mode
   :commands clojure-mode
   :defer t
   :mode (("\\.clj\\'" . clojure-mode)
          ("\\.edn\\'" . clojure-mode))
+  :config (require 'flycheck-clj-kondo)
   :hook
   (clojure-mode . yas-minor-mode)
   (clojure-mode . subword-mode)

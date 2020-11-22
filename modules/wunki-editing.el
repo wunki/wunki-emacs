@@ -20,6 +20,9 @@
 ;; Update the buffer when a file changes on disk
 (global-auto-revert-mode 1)
 
+;; Delete marked region with input
+(delete-selection-mode 1)
+
 ;; Keybindings
 ;; Remap join-line to M-j where it's easier to get to.
 (global-set-key (kbd "M-j") 'join-line)
