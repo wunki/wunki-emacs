@@ -1,10 +1,9 @@
 ;;; -*- lexical-binding: t -*-
-;;; wunki-elixir.el --- Clojure, but with Ruby syntax and a better runtime
+;;; wunki-elixir.el --- Clojure, but with Ruby syntax.
 
 (use-package elixir-mode
-  :init (add-to-list 'exec-path "/Users/petar/Code/elixir-ls/release")
-  :commands elixir-mode
-  :hook (elixir-mode . lsp))
+  :commands elixir-mode)
 
 (provide 'wunki-elixir)
-;;; wunki-clojure.el ends here
+
+;;; wunki-elixir.el ends here
