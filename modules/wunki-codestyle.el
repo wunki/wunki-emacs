@@ -16,7 +16,6 @@
 ;; Strict whitespace with ethan-wspace: highlight bad habits,
 ;; and automatically clean up your code when saving.
 ;; Use C-c w to instantly clean up your file.
-;; Read more about ethan-wspace: https://github.com/glasserc/ethan-wspace
 (use-package ethan-wspace
   :demand t
   :commands global-ethan-wspace-mode
@@ -48,7 +47,6 @@
 
 ;; Set the default formatting styles for various C based modes.
 ;; Particularly, change the default style from GNU to Java.
-;; rms, I love you, but your formatting style makes my eyes bleed.
 (setq c-default-style
       '((awk-mode . "awk")
         (other . "java")))

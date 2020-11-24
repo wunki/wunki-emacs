@@ -3,13 +3,18 @@
 
 (require 'wunki-package)
 
+(defun turn-off-whitespace-mode ()
+  "Unconditionally turn off Whitespace mode."
+  (ethan-wspace-mode -1))
+
 ;; Invoke Magit by typing C-x g, and you can thank me later.
 ;; See http://magit.github.io/ for instructions.
 (use-package magit
   :commands magit-status
   :bind ("C-c g" . magit-status)
   :config
-  (setq magit-completing-read-function 'ivy-completing-read))
+  (setq magit-completing-read-function 'ivy-completing-read)
+  :hook (magit-section-mode . turn-off-whitespace-mode))
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.
