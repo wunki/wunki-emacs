@@ -7,14 +7,13 @@
   "Unconditionally turn off Whitespace mode."
   (ethan-wspace-mode -1))
 
-;; Invoke Magit by typing C-x g, and you can thank me later.
-;; See http://magit.github.io/ for instructions.
+;; Invoke Magit by typing C-c g.
 (use-package magit
   :commands magit-status
   :bind ("C-c g" . magit-status)
   :config
   (setq magit-completing-read-function 'ivy-completing-read)
-  :hook (magit-section-mode . turn-off-whitespace-mode))
+  :hook (git-commit-setup . turn-off-whitespace-mode))
 
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.
