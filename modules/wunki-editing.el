@@ -44,4 +44,9 @@
 ;; things pertaining to braces and such.
 (electric-pair-mode 1)
 
+;; do-what-i-mean for specific commands
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
+(global-set-key (kbd "M-c") 'capitalize-dwim)
+
 (provide 'wunki-editing)
