@@ -3,8 +3,12 @@
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
-;;; Enable native compilation
+;; Enable native compilation
 (setq comp-speed 2)
+
+;; Enable the emacs server
+(load "server")
+(unless (server-running-p) (server-start))
 
 ;; Figure out the current hostname.
 (setq hostname (replace-regexp-in-string "\\(^[[:space:]\n]*\\|[[:space:]\n]*$\\)" "" (with-output-to-string (call-process "hostname" nil standard-output))))
