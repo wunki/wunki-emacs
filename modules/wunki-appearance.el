@@ -9,8 +9,8 @@
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "MonoLisa-14")
-                           ((wunki/is-windows) "Operator Mono Book-9")
-                           (t "OperatorMonoSsmBook-8")))
+                           ((wunki/is-windows) "MonoLisa-14")
+                           (t "MonoLisa-15")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"
