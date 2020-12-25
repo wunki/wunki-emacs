@@ -4,6 +4,6 @@
 (use-package vterm
   :ensure t
   :config
-  (setq vterm-shell "/usr/local/bin/fish"))
+  (setq vterm-shell "/usr/bin/fish"))
 
 (provide 'wunki-term)
