@@ -36,6 +36,7 @@
 (require 'wunki-settings)     ;; common settings
 (require 'wunki-navigation)   ;; moving around
 (require 'wunki-appearance)   ;; theme and fonts
+(require 'wunki-ligatures)    ;; enable ligatures
 (require 'wunki-shell)        ;; required configuration
 (require 'wunki-term)         ;; vterm configuration
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
