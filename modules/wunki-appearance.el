@@ -119,5 +119,11 @@
   (unless (or (minibufferp) (member major-mode linum-disabled-modes))
     (linum-mode 1)))
 
+;; I like myself some italics
+(set-face-attribute 'font-lock-doc-face nil :slant 'italic)
+(set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+(set-face-attribute 'font-lock-function-name-face nil :slant 'italic)
+(set-face-attribute 'font-lock-variable-name-face nil :slant 'italic)
+
 (provide 'wunki-appearance)
 ;;; wunki-appearance.el ends here
