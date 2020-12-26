@@ -18,6 +18,9 @@
 (setq dotfiles-dir (file-name-directory
                     (or (buffer-file-name) (file-chase-links load-file-name))))
 
+;; Project directory
+(setq projects-dir (expand-file-name (concat "~/" "code")))
+
 ;; My personal library files
 (add-to-list 'load-path (concat dotfiles-dir "modules"))
 
