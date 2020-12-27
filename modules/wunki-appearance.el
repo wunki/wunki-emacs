@@ -10,7 +10,7 @@
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "MonoLisa-14")
                            ((wunki/is-windows) "MonoLisa-14")
-                           (t "CascadiaCode-16")))
+                           (t "MonoLisa-17")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"
@@ -37,10 +37,9 @@
 (use-package doom-themes
   :init
   (progn
-    (setq doom-themes-enable-bold nil)
+    (setq doom-themes-enable-bold t)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-tomorrow-night t)
-    )
+    (load-theme 'doom-moonlight t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -52,7 +51,7 @@
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'doom-tomorrow-night t)
+  (load-theme 'doom-moonlight t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
