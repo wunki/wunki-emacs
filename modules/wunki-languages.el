@@ -16,4 +16,8 @@
 (use-package toml-mode
   :mode "\\.toml\\'")
 
+(use-package hcl-mode
+  :commands hcl-mode
+  :mode "\\.nomad\\'")
+
 (provide 'wunki-languages)
