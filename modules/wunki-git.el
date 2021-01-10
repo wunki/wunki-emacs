@@ -15,6 +15,12 @@
   (setq magit-completing-read-function 'ivy-completing-read)
   :hook (git-commit-setup . turn-off-whitespace-mode))
 
+;; Git flow, make sure you have Git flow (AVH) installed.
+(use-package magit-gitflow
+  :ensure t
+  :after magit
+  :config (add-hook 'magit-mode-hook 'turn-on-magit-gitflow))
+
 ;; Use M-x gist-buffer or M-x gist-region to create a gist
 ;; directly from the current buffer or selection.
 (use-package gist)
