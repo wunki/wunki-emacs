@@ -4,7 +4,9 @@
 (use-package vterm
   :ensure t
   :config
-  (setq vterm-shell "/usr/bin/fish"))
+  (setq vterm-shell (if (wunki/is-mac)
+                        "/usr/local/bin/fish"
+                        "/usr/bin/fish")))
 
 ;; easily switch to the terminal and back
 (use-package vterm-toggle
