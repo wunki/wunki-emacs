@@ -14,11 +14,11 @@
         org-startup-indented t
         org-capture-templates
         `(("t" "Inbox" entry (file+headline ,(concat org-root "/inbox.org") "Tasks")
-           "* TODO %?\n  %i\n  %a")))
+           "* TODO %?\n  %i\n  %a")))        
   :hook (org-mode . visual-line-mode))
 
 (use-package org-superstar
-  :ensure
+  :ensure t
   :after org
   :config
   (setq org-superstar-remove-leading-stars t)
@@ -28,6 +28,10 @@
           (?* . ?➤)
           (?- . ?–)))
   (org-superstar-mode -1))
+
+(use-package ox-hugo
+  :ensure t
+  :after ox)
 
 (use-package olivetti
   :diminish
