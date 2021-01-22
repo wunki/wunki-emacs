@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-mu.el --- Best way to deal with email
 
+(add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
+
 (use-package mu4e
   :ensure f
   :commands mu4e
@@ -9,7 +11,9 @@
   ;; generic emacs configuration for email
   (setq mail-user-agent 'mu4e-user-agent
         ;; don't keep message buffers around
-        message-kill-buffer-on-exit t)
+        message-kill-buffer-on-exit t
+        ;; default to smtpmail for sending email
+        message-send-mail-function 'smtpmail-send-it)
 
   ;; mu4e configuration
   (setq mu4e-get-mail-command "mbsync -a"
@@ -27,7 +31,7 @@
              :match-func (lambda (msg)
                            (when msg
                              (string-match-p "^/petar" (mu4e-message-field msg :maildir))))
-             :vars '((user-mail-address      . "petar@wunki.org")
+             :vars '((user-mail-address      . "petar@petar.dev")
                      (user-full-name         . "Petar Radosevic")
                      (mu4e-sent-folder       .  "/petar/sent")
                      (mu4e-trash-folder      .  "/petar/trash")
@@ -36,7 +40,7 @@
                      (mu4e-sent-messages-behavior . sent)
                      (mu4e-compose-signature . (concat
                                                 "Petar Radosevic\n"
-                                                "petar@wunki.org"))
+                                                "petar@petar.dev"))
                      (starttls-use-gnutls           . t)
                      (smtpmail-starttls-credentials . '(("smtp.fastmail.com" 587 nil nil)))
                      (smtpmail-default-smtp-server . "smtp.fastmail.com")
@@ -57,8 +61,8 @@
                      (mu4e-drafts-folder     .  "/degreed/drafts")
                      (mu4e-sent-messages-behavior . delete)
                      (mu4e-compose-signature . (concat
-                                                "Petar Radosevic\n"
-                                                "petar@degreed.com"))
+                                                "Petar Radošević — VP Architecture and Platform\n"
+                                                "petar@degreed.com | degreed.com/petar | Timezone: CET"))
                      (starttls-use-gnutls           . t)
                      (smtpmail-starttls-credentials . '(("smtp.gmail.com" 587 nil nil)))
                      (smtpmail-default-smtp-server . "smtp.gmail.com")

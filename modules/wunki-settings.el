@@ -56,4 +56,7 @@
 ;; use mac key as meta
 (setq mac-command-modifier 'meta)
 
+;; aspell for spell-checking
+(setq ispell-program-name "aspell")
+
 (provide 'wunki-settings)
