@@ -17,9 +17,24 @@
            "* TODO %?\n  %i\n  %a")))
   :hook (org-mode . visual-line-mode))
 
-(use-package org-bullets
-  :after (org)
-  :hook (org-mode . org-bullets-mode))
+(use-package org-superstar
+  :ensure
+  :after org
+  :config
+  (setq org-superstar-remove-leading-stars t)
+  (setq org-superstar-headline-bullets-list '(" ")) ;; '("•" "◉" "○" "▷")
+  (setq org-superstar-item-bullet-alist
+        '((?+ . ?•)
+          (?* . ?➤)
+          (?- . ?–)))
+  (org-superstar-mode -1))
+
+(use-package olivetti
+  :diminish
+  :config
+  (setq olivetti-body-width 0.7)
+  (setq olivetti-minimum-body-width 80)
+  (setq olivetti-recall-visual-line-mode-entry-state t))
 
 (use-package org-cliplink
   :after (org)
