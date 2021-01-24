@@ -32,7 +32,9 @@
         mu4e-maildir "~/mail"
         mu4e-context-policy 'pick-first
         mu4e-compose-context-policy nil
+        mu4e-use-fancy-chars t
         mu4e-confirm-quit nil
+        mu4e-headers-skip-duplicates t
         mu4e-html2text-command "html2text")
   (setq mu4e-contexts
         `( ,(make-mu4e-context
