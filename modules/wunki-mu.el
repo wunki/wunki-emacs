@@ -51,7 +51,7 @@
                      (mu4e-sent-messages-behavior . sent)
                      (mu4e-compose-signature . (concat
                                                 "Petar Radosevic\n"
-                                                "petar@petar.dev"))
+                                                "petar@petar.dev | www.petar.dev"))
                      (starttls-use-gnutls           . t)
                      (smtpmail-starttls-credentials . '(("smtp.fastmail.com" 587 nil nil)))
                      (smtpmail-default-smtp-server . "smtp.fastmail.com")
