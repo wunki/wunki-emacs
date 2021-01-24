@@ -2,11 +2,14 @@
 ;;; wunki-mu.el --- Best way to deal with email
 
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/mu4e")
+(add-to-list 'load-path "/usr/local//Cellar/mu/1.4.14/share/emacs/site-lisp/mu/mu4e")
 
 (use-package mu4e
   :ensure f
   :commands mu4e
-  :bind ("C-c m" . mu4e)
+  :bind (("C-c m" . mu4e)
+         :map mu4e-headers-mode-map
+         ("A" . mu4e-headers-mark-for-archive))
   :config
   ;; generic emacs configuration for email
   (setq mail-user-agent 'mu4e-user-agent
@@ -14,9 +17,17 @@
         message-kill-buffer-on-exit t
         ;; default to smtpmail for sending email
         message-send-mail-function 'smtpmail-send-it)
-
+  (add-to-list 'mu4e-marks
+               '(archive
+                 :char       "A"
+                 :prompt     "Archive"
+                 :show-target (lambda (target) "archive")
+                 :action      (lambda (docid msg target)
+                                (mu4e-action-retag-message msg "-\\Inbox")
+                                (mu4e~proc-move docid nil "+S-u-N"))))
+  (mu4e~headers-defun-mark-for archive)
   ;; mu4e configuration
-  (setq mu4e-get-mail-command "mbsync -a"
+  (setq mu4e-get-mail-command "offlineimap"
         mu4e-change-filenames-when-moving t
         mu4e-maildir "~/mail"
         mu4e-context-policy 'pick-first
