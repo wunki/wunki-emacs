@@ -10,7 +10,7 @@
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "MonoLisa-13")
                            ((wunki/is-windows) "MonoLisa-14")
-                           (t "MonoLisa-15")))
+                           (t "Space Mono-17")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"

@@ -19,7 +19,12 @@
                     (or (buffer-file-name) (file-chase-links load-file-name))))
 
 ;; Project directory
-(setq projects-dir (expand-file-name (concat "~/" "code")))
+(file-directory-p "~/src")
+
+
+(setq projects-dir (if (file-directory-p "~/src")
+                       (expand-file-name (concat "~/" "src"))
+                     (expand-file-name (concat "~/", "projects"))))
 
 ;; My personal library files
 (add-to-list 'load-path (concat dotfiles-dir "modules"))
@@ -34,7 +39,7 @@
 
 ;; Load my modules
 (require 'wunki-package)      ;; setup package management
-(require 'wunki-lib)          ;; usuful methods
+(require 'wunki-lib)          ;; useful methods
 (require 'wunki-help)         ;; further improve help
 (require 'wunki-settings)     ;; common settings
 (require 'wunki-navigation)   ;; moving around
