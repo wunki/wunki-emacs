@@ -12,9 +12,10 @@
   ;; Stop org-mode from highjacking shift-cursor keys.
   (setq org-replace-disputed-keys t
         org-startup-indented t
+        org-agenda-files '("~/notes")
         org-capture-templates
-        `(("t" "Inbox" entry (file+headline ,(concat org-root "/inbox.org") "Tasks")
-           "* TODO %?\n  %i\n  %a")))        
+        `(("t" "Inbox" entry (file+headline ,(concat org-root "/inbox.org") "Inbox")
+           "* TODO %?\n  %i\n  %a")))
   :hook (org-mode . visual-line-mode))
 
 (use-package org-superstar
