@@ -59,5 +59,11 @@
   (interactive)
   (counsel-find-file "~/notes/"))
 
+(defun wunki/insert-now (arg)
+  (interactive "P")
+  (insert (if arg
+              (format-time-string "%d-%m-%Y")
+            (format-time-string "%Y-%m-%d"))))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here

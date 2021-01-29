@@ -21,10 +21,9 @@
 ;; Project directory
 (file-directory-p "~/src")
 
-
 (setq projects-dir (if (file-directory-p "~/src")
                        (expand-file-name (concat "~/" "src"))
-                     (expand-file-name (concat "~/", "projects"))))
+                     (expand-file-name (concat "~/" "projects"))))
 
 ;; My personal library files
 (add-to-list 'load-path (concat dotfiles-dir "modules"))
