@@ -39,7 +39,7 @@
   (progn
     (setq doom-themes-enable-bold t)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-moonlight t))
+    (load-theme 'doom-plain t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -51,7 +51,7 @@
 ;; these methods enable us to quickly reload the theme.
 (defun wunki/reload-theme ()
   (interactive)
-  (load-theme 'doom-moonlight t)
+  (load-theme 'doom-plain t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
