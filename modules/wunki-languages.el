@@ -20,4 +20,10 @@
   :commands hcl-mode
   :mode "\\.nomad\\'")
 
+(use-package markdown-mode
+  :ensure t
+  :mode ("\\.md\\'" . gfm-mode)
+  :hook (markdown-mode . flyspell-mode)
+  :commands (markdown-mode gfm-mode))
+
 (provide 'wunki-languages)
