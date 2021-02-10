@@ -25,6 +25,13 @@
                  :action      (lambda (docid msg target)
                                 (mu4e-action-retag-message msg "-\\Inbox")
                                 (mu4e~proc-move docid nil "+S-u-N"))))
+  (add-to-list 'mu4e-bookmarks
+               '(:name  "Petar's Inbox"
+                 :query "maildir:\"/petar/inbox\""
+                 :key   ?d)
+               '(:name  "Degreed's Inbox"
+                 :query "maildir:\"/degreed/inbox\""
+                 :key   ?d))
   (mu4e~headers-defun-mark-for archive)
   ;; mu4e configuration
   (setq mu4e-get-mail-command "offlineimap"
@@ -68,7 +75,7 @@
                              (string-match-p "^/degreed" (mu4e-message-field msg :maildir))))
              :vars '((user-mail-address      . "petar@degreed.com")
                      (user-full-name         . "Petar Radosevic")
-                     (mu4e-sent-folder       .  "/degreed/sent")
+                     (mu4e-snent-folder       .  "/degreed/sent")
                      (mu4e-trash-folder      .  "/degreed/trash")
                      (mu4e-refile-folder     .  "/degreed/archive")
                      (mu4e-drafts-folder     .  "/degreed/drafts")
