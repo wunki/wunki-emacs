@@ -26,12 +26,13 @@
                                 (mu4e-action-retag-message msg "-\\Inbox")
                                 (mu4e~proc-move docid nil "+S-u-N"))))
   (add-to-list 'mu4e-bookmarks
+              '(:name  "Degreed's Inbox"
+                :query "maildir:\"/degreed/inbox\""
+                :key   ?d))
+  (add-to-list 'mu4e-bookmarks
                '(:name  "Petar's Inbox"
                  :query "maildir:\"/petar/inbox\""
-                 :key   ?d)
-               '(:name  "Degreed's Inbox"
-                 :query "maildir:\"/degreed/inbox\""
-                 :key   ?d))
+                 :key   ?p))
   (mu4e~headers-defun-mark-for archive)
   ;; mu4e configuration
   (setq mu4e-get-mail-command "offlineimap"
