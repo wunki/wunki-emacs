@@ -12,6 +12,6 @@
 (use-package vterm-toggle
   :requires vterm
   :commands (vterm-toggle vterm-toggle-cd)
-  :bind ("C-c C-s" . 'vterm-toggle))
+  :bind ("C-c C-<return>" . 'vterm-toggle-cd))
 
 (provide 'wunki-term)
