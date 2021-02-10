@@ -25,3 +25,4 @@ server/
 /bookmarks
 /transient
 /eln-cache/
+*.db

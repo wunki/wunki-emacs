@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Iosevka-13")
+                           ((wunki/is-mac) "Gintronic-16")
                            ((wunki/is-windows) "Iosevka-14")
                            (t "Iosevka Curly-18")))
 
