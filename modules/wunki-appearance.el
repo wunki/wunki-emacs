@@ -8,9 +8,9 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Gintronic-16")
-                           ((wunki/is-windows) "Iosevka-14")
-                           (t "Iosevka Curly-18")))
+                           ((wunki/is-mac) "MonoLisa-18")
+                           ((wunki/is-windows) "MonoLisa-14")
+                           (t "MonoLisa-16")))
 
 (defun wunki/set-font (font)
   "makes it a bit easier to set the font"

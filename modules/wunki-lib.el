@@ -65,5 +65,17 @@
               (format-time-string "%d-%m-%Y")
             (format-time-string "%Y-%m-%d"))))
 
+(defun wunki/append-to-list (list-var elements)
+  "Append ELEMENTS to the end of LIST-VAR.
+
+The return value is the new value of LIST-VAR."
+  (unless (consp elements)
+    (error "ELEMENTS must be a list"))
+  (let ((list (symbol-value list-var)))
+    (if list
+        (setcdr (last list) elements)
+      (set list-var elements)))
+  (symbol-value list-var))
+
 (provide 'wunki-lib)
 ;;; wunki-lib.el ends here
