@@ -1,14 +1,22 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-lsp.el --- Language Server Protocol support.
 
-(use-package eglot
-  :ensure t
-  :commands (eglot eglot-ensure)
-  :hook ((elixir-mode . eglot-ensure)
-         (before-save . eglot-format-buffer))
+(use-package lsp-mode
+  :ensure
+  :commands lsp
+  :custom
+  (lsp-rust-analyzer-cargo-watch-command "clippy")
+  (lsp-eldoc-render-all t)
+  (lsp-idle-delay 0.6)
   :config
-  (add-to-list 'eglot-server-programs `(elixir-mode . ("sh" ,(concat projects-dir "/elixir-ls/release/language_server.sh"))))
-  (setq eglot-confirm-server-initiated-edits nil))
-  
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+
+(use-package lsp-ui
+  :ensure
+  :commands lsp-ui-mode
+  :custom
+  (lsp-ui-peek-always-show t)
+  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-doc-enable nil))
 
 (provide 'wunki-lsp)

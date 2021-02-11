@@ -26,3 +26,4 @@ server/
 /transient
 /eln-cache/
 *.db
+/.lsp-session-v1
