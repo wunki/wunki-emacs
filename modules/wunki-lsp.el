@@ -9,7 +9,12 @@
   (lsp-eldoc-render-all t)
   (lsp-idle-delay 0.6)
   :config
-  (add-hook 'lsp-mode-hook 'lsp-ui-mode))
+  (add-hook 'lsp-mode-hook 'lsp-ui-mode)
+  (add-to-list 'lsp-language-id-configuration '(zig-mode . "zig"))
+  (lsp-register-client (make-lsp-client
+                        :new-connection (lsp-stdio-connection "~/code/zls/zig-cache/bin/zls")
+                        :major-modes '(zig-mode)
+                        :server-id 'zls)))
 
 (use-package lsp-ui
   :ensure
