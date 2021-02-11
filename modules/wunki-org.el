@@ -29,6 +29,7 @@
               (("C-c n l" . org-roam)
                ("C-c n t" . org-roam-dailies-find-today)
                ("C-c n w" . org-roam-dailies-find-tomorrow)
+               ("C-c n y" . org-roam-dailies-find-yesterday)
                ("C-c n d" . org-roam-date)
                ("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph-show))
