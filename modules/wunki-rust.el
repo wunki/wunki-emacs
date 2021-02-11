@@ -1,41 +1,30 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-rust.el --- Rust language support.
 
-(use-package rust-mode
-  :commands rust-mode
-  :init
-  (setq rust-format-on-save t))
+(use-package rustic
+  :ensure
+  :bind (:map rustic-mode-map
+              ("M-j" . lsp-ui-imenu)
+              ("M-?" . lsp-find-references)
+              ("C-c C-c l" . flycheck-list-errors)
+              ("C-c C-c a" . lsp-execute-code-action)
+              ("C-c C-c r" . lsp-rename)
+              ("C-c C-c q" . lsp-workspace-restart)
+              ("C-c C-c Q" . lsp-workspace-shutdown)
+              ("C-c C-c s" . lsp-rust-analyzer-status))
+  :config
+  ;; uncomment for less flashiness
+  ;; (setq lsp-eldoc-hook nil)
+  ;; (setq lsp-enable-symbol-highlighting nil)
+  ;; (setq lsp-signature-auto-activate nil)
 
-(use-package cargo
-  :hook (rust-mode . cargo-minor-mode)
-  :init
-  (setq compilation-ask-about-save nil)
-  ;; Automatically re-run compilation command on manual save inside a project.
-  ;; Will do nothing if a compilation hasn't been manually triggered
-  ;; in the past.
-  (with-eval-after-load "projectile"
-    (bind-key "C-c p c" #'wunki/save-and-recompile)
-    (bind-key "C-c p C" #'wunki/save-all-and-recompile))
-  :diminish cargo-minor-mode)
+  ;; comment to disable rustfmt on save
+  (setq rustic-format-on-save t)
+  (add-hook 'rustic-mode-hook 'wunki/rustic-mode-hook))
 
-;; lsp interaction
-(use-package eglot
-  :commands eglot
-  :hook (rust-mode . eglot-ensure))
-
-(defun wunki/save-and-recompile ()
-  (interactive)
-  (save-buffer)
-  (when compile-history
-    (let ((cmd (car compile-history)))
-      (projectile-run-compilation cmd))))
-
-(defun wunki/save-all-and-recompile ()
-  (interactive)
-  (save-some-buffers)
-  (when compile-history
-    (let ((cmd (car compile-history)))
-      (projectile-run-compilation cmd))))
+(defun wunki/rustic-mode-hook ()
+  ;; so that run C-c C-c C-r works without having to confirm
+  (setq-local buffer-save-without-query t))
 
 (provide 'wunki-rust)
 ;;; wunki-rust.el ends here
