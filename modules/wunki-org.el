@@ -32,10 +32,12 @@
                ("C-c n y" . org-roam-dailies-find-yesterday)
                ("C-c n d" . org-roam-date)
                ("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph-show))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+               ("C-c n g" . org-roam-graph-show)
+               ("C-c n <left>" . org-roam-dailies-find-previous)
+               ("C-c n <right>" . org-roam-dailies-find-next))
+         :map org-mode-map
+              (("C-c n i" . org-roam-insert)
+               ("C-c n I" . org-roam-insert-immediate))))
 
 (use-package org-superstar
   :ensure t
