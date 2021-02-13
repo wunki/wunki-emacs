@@ -43,9 +43,11 @@
 (require 'wunki-settings)     ;; common settings
 (require 'wunki-navigation)   ;; moving around
 (require 'wunki-appearance)   ;; theme and fonts
-(require 'wunki-ligatures)    ;; enable ligatures
+(unless (wunki/is-windows)
+ (require 'wunki-ligatures))  ;; enable ligatures
 (require 'wunki-shell)        ;; required configuration
-(require 'wunki-term)         ;; vterm configuration
+(unless (wunki/is-windows)
+ (require 'wunki-term))       ;; vterm configuration
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-languages)    ;; language modes which are generic
@@ -57,13 +59,9 @@
 (require 'wunki-org)
 (require 'wunki-mu)
 (require 'wunki-git)
-(require 'wunki-c)
 (require 'wunki-elisp)
 (require 'wunki-elixir)
 (require 'wunki-clojure)
 (require 'wunki-rust)
-(require 'wunki-go)
 (require 'wunki-zig)
 (require 'wunki-html)
-(require 'wunki-twitter)
-(require 'wunki-erc)
