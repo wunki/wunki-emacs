@@ -33,11 +33,18 @@
                ("C-c n d" . org-roam-date)
                ("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph-show)
-               ("C-c n <left>" . org-roam-dailies-find-previous)
-               ("C-c n <right>" . org-roam-dailies-find-next))
+               ("C-c n <left>" . org-roam-dailies-find-previous-note)
+               ("C-c n <right>" . org-roam-dailies-find-next-note))
          :map org-mode-map
               (("C-c n i" . org-roam-insert)
-               ("C-c n I" . org-roam-insert-immediate))))
+               ("C-c n I" . org-roam-insert-immediate)))
+  :config
+  (setq org-roam-dailies-capture-templates
+      '(("d" "default" entry
+         #'org-roam-capture--get-point
+         "* %?"
+         :file-name "daily/%<%Y-%m-%d>"
+         :head "#+title: %<%A, %d %B %Y>\n\n* I am gratefull for?\n\n* I will focus on?\n\n* Tasks\n"))))
 
 (use-package org-superstar
   :ensure t
