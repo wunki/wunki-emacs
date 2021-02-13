@@ -5,4 +5,4 @@ Take a look in my kitchen.
 
 ## Pull latest Ligatures library
 
-`git subtree pull --prefix elisp/ligatures git@github.com:mickeynp/ligature.el.git master --squash`
+`git subtree pull --prefix elisp/ligature git@github.com:mickeynp/ligature.el.git master --squash`
