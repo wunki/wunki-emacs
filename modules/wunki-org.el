@@ -44,7 +44,7 @@
          #'org-roam-capture--get-point
          "* %?"
          :file-name "daily/%<%Y-%m-%d>"
-         :head "#+title: %<%A, %d %B %Y>\n\n* I am gratefull for?\n\n* I will focus on?\n\n* Tasks\n"))))
+         :head "#+title: %<%A, %d %B %Y>\n\n* I am grateful for?\n\n* I will focus on?\n\n* Tasks\n"))))
 
 (use-package org-superstar
   :ensure t
