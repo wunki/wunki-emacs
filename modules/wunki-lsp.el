@@ -16,7 +16,8 @@
   (lsp-register-client (make-lsp-client
                         :new-connection (lsp-stdio-connection "~/code/zls/zig-cache/bin/zls")
                         :major-modes '(zig-mode)
-                        :server-id 'zls)))
+                        :server-id 'zls))
+  :hook (elixir-mode . lsp))
 
 (use-package lsp-ui
   :ensure
