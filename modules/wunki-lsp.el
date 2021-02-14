@@ -4,6 +4,8 @@
 (use-package lsp-mode
   :ensure
   :commands lsp
+  :init
+  (add-to-list 'exec-path "~/code/elixir-ls/release")
   :custom
   (lsp-rust-analyzer-cargo-watch-command "clippy")
   (lsp-eldoc-render-all t)
