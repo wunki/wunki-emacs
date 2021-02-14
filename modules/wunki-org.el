@@ -23,6 +23,12 @@
            "* TODO %?\n  %i\n  %a")))
   :hook (org-mode . visual-line-mode))
 
+;; automatically save changes to disk so I'm sure they are synced
+;; across my devices
+(use-package real-auto-save
+  :hook
+  (org-mode . real-auto-save-mode))
+
 (use-package org-roam
   :ensure t
   :delight " 𝕫"
