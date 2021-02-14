@@ -25,6 +25,11 @@
   (interactive)
   (string-equal system-type "windows-nt"))
 
+(defun wunki/is-linux ()
+  "Returns true if running on Linux"
+  (interactive)
+  (string-equal system-type "gnu/linux"))
+
 (defun wunki/kill-region-or-backward-word ()
   "Kill either the word backwards or the active region"
   (interactive)

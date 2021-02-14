@@ -3,11 +3,12 @@
 
 (require 'wunki-package)
 
-(defvar org-root (expand-file-name "~/Notes"))
+(if (wunki/is-linux)
+ (defvar org-root (expand-file-name "~/notes"))
+ (defvar org-root (expand-file-name "~/Notes")))
 
 (when (wunki/is-windows)
-  (add-to-list 'exec-path "c:/Program Files/SQLite3")
-  (defvar org-root (expand-file-name "~/Notes")))
+  (add-to-list 'exec-path "c:/Program Files/SQLite3"))
 
 (use-package org
   :ensure org-plus-contrib
