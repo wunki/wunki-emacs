@@ -55,12 +55,8 @@
   :after org
   :config
   (setq org-superstar-remove-leading-stars t)
-  (setq org-superstar-headline-bullets-list '(" ")) ;; '("•" "◉" "○" "▷")
-  (setq org-superstar-item-bullet-alist
-        '((?+ . ?•)
-          (?* . ?➤)
-          (?- . ?–)))
-  (org-superstar-mode -1))
+  (setq org-superstar-special-todo-items t)
+  :hook (org-mode . org-superstar-mode))
 
 ;; easily export org to hugo
 (use-package ox-hugo
