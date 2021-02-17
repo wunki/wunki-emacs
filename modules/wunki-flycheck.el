@@ -9,10 +9,10 @@
 
 ;; Install Flycheck.
 (use-package flycheck
+  :commands flycheck-mode
+  :init (global-flycheck-mode)
   :config
-  :hook (find-file . (lambda ()
-                       (when (not (member major-mode '(emacs-lisp-mode rust-mode)))
-                         (flycheck-mode)))))
+  (setq flycheck-global-modes '(not org-mode)))
 
 ;; Turn the modeline red when Flycheck has errors.
 (use-package flycheck-color-mode-line
