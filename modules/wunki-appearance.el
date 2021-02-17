@@ -9,11 +9,11 @@
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "Dank Mono-16")
-                           ((wunki/is-windows) "Dank Mono-12")
+                           ((wunki/is-windows) "Cascadia Code-12")
                            (t "MonoLisa-16")))
 
 (defun wunki/set-font (font)
-  "makes it a bit easier to set the font"
+  "Make it a bit easier to set the FONT."
   (interactive "sfont: ")
   (add-to-list 'default-frame-alist (cons 'font font))
   (set-face-attribute 'default nil :font font)
