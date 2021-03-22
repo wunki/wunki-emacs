@@ -10,7 +10,7 @@
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "Dank Mono-16")
                            ((wunki/is-windows) "Cascadia Code-12")
-                           (t "CartographCF-17")))
+                           (t "CartographCF-18")))
 
 (defun wunki/set-font (font)
   "Make it a bit easier to set the FONT."

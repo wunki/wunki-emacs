@@ -44,6 +44,8 @@
                ("C-c n d" . org-roam-date)
                ("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph-show)
+               ("C-c n o" . olivetti-mode)
+               ("C-c n T" . org-roam-tag-add)
                ("C-c n <left>" . org-roam-dailies-find-previous-note)
                ("C-c n <right>" . org-roam-dailies-find-next-note))
          :map org-mode-map
