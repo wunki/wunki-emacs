@@ -16,7 +16,7 @@
   (f-executable? (s-trim (shell-command-to-string (s-concat "which " command)))))
 
 (defun wunki/is-mac ()
-  "Returns true if running on a mac"
+  "Return non-nil if running on a mac."
   (interactive)
   (string-equal system-type "darwin"))
 
