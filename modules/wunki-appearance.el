@@ -10,7 +10,7 @@
 (defvar wunki/font-choice (cond
                            ((wunki/is-mac) "Dank Mono-16")
                            ((wunki/is-windows) "MonoLisa-16")
-                           (t "CartographCF-17")))
+                           (t "MonoLisa-17")))
 
 (defun wunki/set-font (font)
   "Make it a bit easier to set the FONT."
@@ -39,7 +39,7 @@
   (progn
     (setq doom-themes-enable-bold t)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-rouge t))
+    (load-theme 'doom-flatwhite t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -52,7 +52,7 @@
 (defun wunki/reload-theme ()
   "Completely reloads the current theme."
   (interactive)
-  (load-theme 'doom-rouge t)
+  (load-theme 'doom-flatwhite t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
