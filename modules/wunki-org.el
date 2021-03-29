@@ -35,7 +35,7 @@
   :hook
   (after-init . org-roam-mode)
   :custom
-  (org-roam-directory "~/notes/zettel")
+  (org-roam-directory (concat org-root "/zettel"))
   :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n t" . org-roam-dailies-find-today)
