@@ -39,7 +39,7 @@
   (progn
     (setq doom-themes-enable-bold t)
     (setq doom-themes-enable-italic t)
-    (load-theme 'doom-horizon t))
+    (load-theme 'doom-rouge t))
   :config
   (progn
     (set-face-italic 'font-lock-comment-face t)
@@ -52,7 +52,7 @@
 (defun wunki/reload-theme ()
   "Completely reloads the current theme."
   (interactive)
-  (load-theme 'doom-horizon t)
+  (load-theme 'doom-rouge t)
   (set-face-italic 'font-lock-comment-face t)
   (wunki/set-font wunki/font-choice)
   (doom-themes-neotree-config)
