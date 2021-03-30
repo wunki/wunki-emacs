@@ -24,8 +24,8 @@
   :ensure
   :commands lsp-ui-mode
   :custom
-  (lsp-ui-peek-always-show t)
-  (lsp-ui-sideline-show-hover t)
+  (lsp-ui-peek-always-show nil)
+  (lsp-ui-sideline-show-hover nil)
   (lsp-ui-doc-enable nil))
 
 (provide 'wunki-lsp)
