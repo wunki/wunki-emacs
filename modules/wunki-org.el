@@ -5,7 +5,7 @@
 
 (if (wunki/is-linux)
  (defvar org-root (expand-file-name "~/notes"))
- (defvar org-root (expand-file-name "~/Notes")))
+ (defvar org-root (expand-file-name "~/Dropbox/Notes")))
 
 (when (wunki/is-windows)
   (add-to-list 'exec-path "c:/Program Files/SQLite3"))
