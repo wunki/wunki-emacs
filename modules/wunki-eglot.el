@@ -1,6 +1,8 @@
 ;;; -*- lexical-binding: t -*-
 ;;; wunki-eglot.el --- Language Server Protocol support.
 
+;;; Code:
+
 (use-package eglot
   :commands eglot
   :config
@@ -10,3 +12,4 @@
 (use-package eldoc-box)
 
 (provide 'wunki-eglot)
+;;; wunki-eglot ends here
