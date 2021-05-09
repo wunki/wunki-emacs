@@ -8,7 +8,7 @@
 
 ;; Font configuration and settings
 (defvar wunki/font-choice (cond
-                           ((wunki/is-mac) "Dank Mono-16")
+                           ((wunki/is-mac) "MonoLisa-14")
                            ((wunki/is-windows) "MonoLisa-16")
                            (t "MonoLisa-17")))
 

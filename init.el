@@ -5,6 +5,7 @@
 
 ;; Enable native compilation
 (setq comp-speed 2)
+(setq comp-async-report-warnings-errors nil)
 
 ;; Enable the emacs server
 (load "server")
@@ -51,7 +52,8 @@
 (require 'wunki-codestyle)    ;; tabs, spaces, etc.
 (require 'wunki-editing)      ;; some defaults for editing files
 (require 'wunki-languages)    ;; language modes which are generic
-(require 'wunki-lsp)          ;; language-server-protocol
+;;(require 'wunki-lsp)          ;; language-server protocol
+(require 'wunki-eglot)        ;; language-server protocol
 (require 'wunki-flycheck)
 (require 'wunki-completions)
 (require 'wunki-snippets)
